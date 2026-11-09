@@ -1,0 +1,10 @@
+{
+  "entries": [
+    {"id": "narration", "title": "The quiet craft of audiobook narration", "type": "dailyRead", "status": "scheduled", "date": "2026-11-10T06:00:00", "image": "assets/images/microphone.jpg"},
+    {"id": "north-of-quiet", "title": "North of Quiet", "type": "newTitle", "status": "scheduled", "date": "2026-11-11T06:00:00"},
+    {"id": "spring-tide", "title": "Spring tide", "type": "reference", "status": "draft", "date": "2026-11-12T06:00:00"},
+    {"id": "read-by-the-sea", "title": "Why we still read by the sea", "type": "dailyRead", "status": "published", "date": "2026-11-09T06:00:00", "image": "assets/images/lighthouse-article.jpg"},
+    {"id": "tide-tables", "title": "Reading the tide tables", "type": "dailyRead", "status": "published", "date": "2026-11-02T06:00:00", "image": "assets/images/tide-pools.jpg"}
+  ],
+  "totals": {"published": 128, "drafts": 3}
+}

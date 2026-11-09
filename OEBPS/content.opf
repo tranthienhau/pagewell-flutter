@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:identifier id="bookid">urn:uuid:7c1d2f0a-5a1e-4c8e-9b7d-salt-road-0001</dc:identifier>
+    <dc:title>The Salt Road</dc:title>
+    <dc:creator>Imogen Hale</dc:creator>
+    <dc:language>en</dc:language>
+    <meta property="dcterms:modified">2026-11-01T00:00:00Z</meta>
+  </metadata>
+  <manifest>
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="ch1" href="ch1.xhtml" media-type="application/xhtml+xml"/><item id="ch2" href="ch2.xhtml" media-type="application/xhtml+xml"/><item id="ch3" href="ch3.xhtml" media-type="application/xhtml+xml"/><item id="ch4" href="ch4.xhtml" media-type="application/xhtml+xml"/>
+  </manifest>
+  <spine><itemref idref="ch1"/><itemref idref="ch2"/><itemref idref="ch3"/><itemref idref="ch4"/></spine>
+</package>
