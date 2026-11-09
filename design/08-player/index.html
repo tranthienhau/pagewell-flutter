@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audiobook Player · Pagewell</title>
+<!-- Google Fonts: Fraunces & Outfit -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatim from instructions -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#d5c0d3",
+            "surface-container-highest": "#eedeeb",
+            "success-text": "#0E7C3A",
+            "surface-bright": "#fff7fa",
+            "surface-variant": "#eedeeb",
+            "on-background": "#211922",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#201c00",
+            "accent-tint": "#F6E4FA",
+            "on-secondary-container": "#68007d",
+            "surface-container": "#f9e9f6",
+            "tertiary": "#6a5f00",
+            "primary-container": "#b63bd1",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#fed6ff",
+            "surface-container-lowest": "#ffffff",
+            "hairline-divider": "#EADCEE",
+            "warning-text": "#A75906",
+            "support": "#A8D672",
+            "secondary-container": "#e979fd",
+            "background": "#FAF4FC",
+            "on-surface": "#211922",
+            "inverse-primary": "#f6adff",
+            "outline": "#837282",
+            "text-tertiary": "#76687A",
+            "danger-text": "#CE2020",
+            "on-secondary-fixed-variant": "#7a0093",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#f6adff",
+            "on-secondary-fixed": "#350041",
+            "accent-fill-pressed": "#9B3BAF",
+            "success-bg": "#E3F4E9",
+            "on-primary-fixed-variant": "#7a0093",
+            "text-secondary": "#574A5A",
+            "on-tertiary-fixed-variant": "#504700",
+            "secondary": "#972aae",
+            "surface-container-low": "#ffeffb",
+            "inverse-surface": "#372d37",
+            "on-primary-fixed": "#350041",
+            "tertiary-container": "#bdac34",
+            "support-strong": "#6EA22E",
+            "on-surface-variant": "#514251",
+            "on-primary-container": "#fffbff",
+            "danger-bg": "#FBE5E5",
+            "warning-bg": "#FAEFE1",
+            "text-primary": "#1C0C1F",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-container-high": "#f4e4f0",
+            "control-border": "#B085B4",
+            "surface": "#FFFFFF",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#f6adff",
+            "surface-tint": "#9c1ab8",
+            "surface-alt": "#F3E8F6",
+            "inverse-on-surface": "#fcecf9",
+            "tertiary-fixed": "#f7e467",
+            "surface-dim": "#e5d5e2",
+            "primary": "#9915b5",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#484000",
+            "secondary-fixed": "#fed6ff",
+            "tertiary-fixed-dim": "#dac84e"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "32px",
+            "margin": "20px",
+            "space-sm": "8px",
+            "space-lg": "16px",
+            "space-xl": "24px",
+            "gutter": "16px",
+            "space-xs": "4px",
+            "space-md": "12px"
+          },
+          "fontFamily": {
+            "reader-body": ["Fraunces"],
+            "display": ["Fraunces"],
+            "headline": ["Fraunces"],
+            "legal": ["Outfit"],
+            "caption": ["Outfit"],
+            "body": ["Outfit"],
+            "title": ["Outfit"],
+            "label": ["Outfit"]
+          },
+          "fontSize": {
+            "reader-body": ["18px", {"lineHeight": "28.8px", "fontWeight": "400"}],
+            "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "legal": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "caption": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+            "body": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "title": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "label": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined[data-weight="fill"] {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .cover-shadow {
+      box-shadow: 0 1px 2px rgba(28, 12, 31, 0.04), 0 8px 24px rgba(28, 12, 31, 0.06);
+    }
+    .play-shadow {
+      box-shadow: 0 4px 14px rgba(153, 21, 181, 0.35);
+    }
+  </style>
+</head>
+<body class="bg-surface-variant flex items-center justify-center min-h-screen p-0 sm:p-4 select-none antialiased">
+<!-- Mobile Frame Container (Strict 393px × 852px) -->
+<div class="relative w-full max-w-[393px] h-[852px] bg-background text-text-primary flex flex-col justify-between overflow-hidden shadow-2xl sm:rounded-[44px]">
+<!-- Status Bar Safe Area Placeholder (59px) -->
+<div class="w-full h-11 pt-3 px-7 flex justify-between items-center text-text-secondary text-caption font-caption z-20">
+<span class="font-semibold tracking-tight text-text-primary text-[14px]">9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[17px] text-text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[17px] text-text-primary" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[20px] text-text-primary" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- TopAppBar (Rendered strictly from Shared Components JSON spec) -->
+<!-- JSON: type: small_center_aligned, headline: "Now playing", leading_icon: "keyboard_arrow_down", trailing_icon: "more_vert" -->
+<header class="flex justify-between items-center w-full px-5 h-14 bg-background z-20">
+<button aria-label="Minimize player" class="w-10 h-10 flex items-center justify-center rounded-full text-text-secondary hover:bg-accent-tint active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[28px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+<div class="text-center">
+<span class="font-title text-caption tracking-wider uppercase font-semibold text-text-tertiary">Now playing</span>
+</div>
+<button aria-label="More options" class="w-10 h-10 flex items-center justify-center rounded-full text-text-secondary hover:bg-accent-tint active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="more_vert">more_vert</span>
+</button>
+</header>
+<!-- Main Content Canvas (Focused Journey, Single Column, No bottom tab bar per specification) -->
+<main class="flex-1 flex flex-col justify-between px-6 pb-2 pt-1 z-10 overflow-y-auto">
+<!-- Hero Artwork: Book Cover -->
+<div class="flex justify-center items-center my-auto">
+<div class="relative w-[280px] h-[280px] rounded-[20px] overflow-hidden cover-shadow bg-surface-alt transition-transform duration-300 hover:scale-[1.01]">
+<img alt="Quiet Hours Book Cover" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrD3hCpfkcgA5dSRT1lvAhZEYP9EI9fWuPRISRnKxhstyBx3CyCIQpSf2FBUOihnfyPpV-x3Ef7tBW6Gdy_qVfGcm-WTbcwGb8gpIyEvb5ISN1c1-B4JUojszAgKY61E_4rfej2GFujYjycB49rPPHi80p4muD8-l27HhiRCqI_ffmkZz42lrUQMK12Q42Qwoi6Q1dK4NAXPtn453axrhWgmWQfEjRGCsaMGR4JWrCCSBrJfSwA76P7hv3M"/>
+<!-- Subtle editorial inner border tone -->
+<div class="absolute inset-0 rounded-[20px] ring-1 ring-inset ring-black/5 pointer-events-none"></div>
+</div>
+</div>
+<!-- Book Metadata Cluster -->
+<div class="text-center space-y-1.5 mt-2">
+<h1 class="font-display text-display text-text-primary tracking-tight leading-none">
+          Quiet Hours
+        </h1>
+<p class="font-body text-body text-text-secondary font-medium">
+          Theo Marsh
+        </p>
+<div class="pt-1">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-accent-tint text-primary font-label text-caption font-semibold">
+            Chapter 7 · The Long Field
+          </span>
+</div>
+</div>
+<!-- Scrubber Section -->
+<div class="space-y-2 mt-4 px-1">
+<!-- Interactive Scrubber Track -->
+<div class="relative w-full h-6 flex items-center cursor-pointer group">
+<!-- Full Track -->
+<div class="w-full h-1.5 bg-surface-alt rounded-full overflow-hidden relative">
+<!-- Buffered Bar (68%) -->
+<div class="absolute top-0 left-0 bottom-0 w-[68%] bg-accent-tint rounded-full"></div>
+<!-- Progress Bar (44%) -->
+<div class="absolute top-0 left-0 bottom-0 w-[44%] bg-[#C64BE0] rounded-full"></div>
+</div>
+<!-- Scrubber Thumb Indicator -->
+<div class="absolute left-[44%] -translate-x-1/2 w-4 h-4 rounded-full bg-surface border-2 border-[#C64BE0] shadow-sm ring-2 ring-accent-tint transition-transform group-hover:scale-125"></div>
+</div>
+<!-- Scrubber Timestamps -->
+<div class="flex justify-between items-center text-text-tertiary font-caption text-caption px-0.5">
+<span>18:24</span>
+<span>-23:46</span>
+</div>
+</div>
+<!-- Primary Playback Controls Row -->
+<div class="flex items-center justify-center space-x-8 py-2">
+<!-- Rewind 15s -->
+<button aria-label="Rewind 15 seconds" class="relative flex flex-col items-center justify-center w-12 h-12 text-text-primary hover:text-primary active:scale-90 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[34px]" data-icon="replay_10">replay_10</span>
+<span class="absolute text-[9px] font-bold text-text-primary pointer-events-none mt-[2px]">15</span>
+</button>
+<!-- Main Play/Pause Button (80px filled #A337BA per spec) -->
+<button aria-label="Pause" class="w-20 h-20 rounded-full bg-[#A337BA] hover:bg-accent-fill-pressed active:scale-95 transition-all duration-200 flex items-center justify-center text-on-primary play-shadow" type="button">
+<span class="material-symbols-outlined text-[38px]" data-icon="pause" data-weight="fill">pause</span>
+</button>
+<!-- Forward 15s -->
+<button aria-label="Forward 15 seconds" class="relative flex flex-col items-center justify-center w-12 h-12 text-text-primary hover:text-primary active:scale-90 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[34px]" data-icon="forward_10">forward_10</span>
+<span class="absolute text-[9px] font-bold text-text-primary pointer-events-none mt-[2px]">15</span>
+</button>
+</div>
+<!-- Secondary Action Controls Row (4 Pill Chips) -->
+<div class="grid grid-cols-4 gap-2 pt-1 pb-1">
+<!-- Pill 1: Speed -->
+<button class="h-9 px-2.5 rounded-full bg-surface-alt hover:bg-accent-tint text-text-primary font-label text-caption font-medium flex items-center justify-center space-x-1 border border-hairline-divider active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="speed">speed</span>
+<span class="text-primary font-semibold">1.25x</span>
+</button>
+<!-- Pill 2: Sleep Timer -->
+<button class="h-9 px-2 rounded-full bg-surface hover:bg-surface-alt text-text-secondary font-label text-caption font-medium flex items-center justify-center space-x-1 border border-hairline-divider active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="bedtime">bedtime</span>
+<span>15 min</span>
+</button>
+<!-- Pill 3: Bookmark -->
+<button class="h-9 px-2 rounded-full bg-surface hover:bg-surface-alt text-text-secondary font-label text-caption font-medium flex items-center justify-center space-x-1 border border-hairline-divider active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="bookmark">bookmark</span>
+<span>Mark</span>
+</button>
+<!-- Pill 4: Chapters -->
+<button class="h-9 px-2 rounded-full bg-surface hover:bg-surface-alt text-text-secondary font-label text-caption font-medium flex items-center justify-center space-x-1 border border-hairline-divider active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="format_list_bulleted">format_list_bulleted</span>
+<span>List</span>
+</button>
+</div>
+<!-- Footer Info Caption (Streaming quality indicator) -->
+<div class="flex items-center justify-center space-x-1.5 py-1 text-text-tertiary font-legal text-legal">
+<span class="material-symbols-outlined text-[14px]" data-icon="graphic_eq">graphic_eq</span>
+<span>Streaming · 64 kbps High-Efficiency AAC</span>
+</div>
+</main>
+<!-- iOS Home Indicator Safe Area (34px) -->
+<div class="w-full h-8 flex items-center justify-center pb-2">
+<div class="w-32 h-1 bg-text-primary/20 rounded-full"></div>
+</div>
+</div>
+</body></html>

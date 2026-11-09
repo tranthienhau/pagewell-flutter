@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pagewell - Editor studio</title>
+<!-- Fonts: Fraunces & Outfit -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#eedeeb",
+            "on-error-container": "#93000a",
+            "support": "#A8D672",
+            "surface-bright": "#fff7fa",
+            "inverse-on-surface": "#fcecf9",
+            "surface-container-low": "#ffeffb",
+            "on-surface-variant": "#514251",
+            "warning-text": "#A75906",
+            "danger-text": "#CE2020",
+            "surface-tint": "#9c1ab8",
+            "primary-container": "#b63bd1",
+            "background": "#FAF4FC",
+            "text-tertiary": "#76687A",
+            "on-surface": "#211922",
+            "secondary-fixed": "#fed6ff",
+            "support-strong": "#6EA22E",
+            "on-secondary": "#ffffff",
+            "accent-fill-pressed": "#9B3BAF",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#f6adff",
+            "on-primary-container": "#fffbff",
+            "outline": "#837282",
+            "success-text": "#0E7C3A",
+            "secondary": "#972aae",
+            "warning-bg": "#FAEFE1",
+            "tertiary-fixed-dim": "#dac84e",
+            "on-primary-fixed": "#350041",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed": "#201c00",
+            "inverse-primary": "#f6adff",
+            "surface-container": "#f9e9f6",
+            "tertiary-fixed": "#f7e467",
+            "text-secondary": "#574A5A",
+            "outline-variant": "#d5c0d3",
+            "text-primary": "#1C0C1F",
+            "on-primary-fixed-variant": "#7a0093",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#f6adff",
+            "on-background": "#211922",
+            "tertiary": "#6a5f00",
+            "surface": "#FFFFFF",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#fed6ff",
+            "surface-container-high": "#f4e4f0",
+            "on-secondary-container": "#68007d",
+            "success-bg": "#E3F4E9",
+            "primary": "#9915b5",
+            "tertiary-container": "#bdac34",
+            "hairline-divider": "#EADCEE",
+            "danger-bg": "#FBE5E5",
+            "surface-alt": "#F3E8F6",
+            "secondary-container": "#e979fd",
+            "on-secondary-fixed-variant": "#7a0093",
+            "accent-tint": "#F6E4FA",
+            "on-tertiary-fixed-variant": "#504700",
+            "error": "#ba1a1a",
+            "surface-dim": "#e5d5e2",
+            "on-tertiary-container": "#484000",
+            "inverse-surface": "#372d37",
+            "surface-container-highest": "#eedeeb",
+            "on-secondary-fixed": "#350041",
+            "control-border": "#B085B4"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "32px",
+            "margin": "20px",
+            "gutter": "16px",
+            "space-xl": "24px",
+            "space-lg": "16px",
+            "space-md": "12px",
+            "space-sm": "8px",
+            "space-xs": "4px"
+          },
+          "fontFamily": {
+            "title": ["Outfit", "sans-serif"],
+            "legal": ["Outfit", "sans-serif"],
+            "caption": ["Outfit", "sans-serif"],
+            "headline": ["Fraunces", "serif"],
+            "reader-body": ["Fraunces", "serif"],
+            "body": ["Outfit", "sans-serif"],
+            "label": ["Outfit", "sans-serif"],
+            "display": ["Fraunces", "serif"]
+          },
+          "fontSize": {
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "legal": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "headline": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "reader-body": ["18px", { "lineHeight": "28.8px", "fontWeight": "400" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          },
+          "boxShadow": {
+            "soft-ambient": "0 1px 2px rgba(28,12,31,.04), 0 8px 24px rgba(28,12,31,.06)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center selection:bg-accent-tint selection:text-text-primary">
+<!-- Mobile Frame Container (Strict 393px viewport) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background flex flex-col relative pb-[34px]">
+<!-- Top Safe Area Padding (~59px system clearance) -->
+<div class="h-[14px] w-full shrink-0"></div>
+<!-- Shared Component: TopAppBar -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-hairline-divider dark:border-outline-variant shadow-sm docked full-width top-0 z-30 sticky top-0">
+<div class="flex items-center justify-between px-margin w-full h-[56px] max-w-[393px] mx-auto">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Go back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-text-primary hover:bg-accent-tint dark:hover:bg-on-surface-variant/20 transition-colors active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-headline text-title text-text-primary dark:text-inverse-on-surface tracking-tight">Editor studio</h1>
+</div>
+<!-- Header Right Secondary Action -->
+<button class="h-9 px-space-md rounded-full bg-surface border-[1.5px] border-control-border text-text-primary hover:bg-accent-tint transition-colors flex items-center gap-1 active:scale-95 transition-transform duration-150 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="font-label text-label font-medium">New entry</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas (Scrollable) -->
+<div class="flex-1 px-margin pt-space-lg flex flex-col gap-space-xl">
+<!-- Section 1: Stat Tiles (3 side by side) -->
+<section aria-label="Publication summary" class="grid grid-cols-3 gap-space-sm">
+<!-- Stat Tile 1: Published -->
+<div class="bg-surface rounded-[20px] p-space-md flex flex-col items-center justify-center shadow-soft-ambient text-center border border-hairline-divider/40">
+<span class="font-display text-display text-[#A337BA] font-bold tracking-tight">128</span>
+<span class="font-label text-caption text-text-secondary mt-space-xs font-medium">Published</span>
+</div>
+<!-- Stat Tile 2: Scheduled -->
+<div class="bg-surface rounded-[20px] p-space-md flex flex-col items-center justify-center shadow-soft-ambient text-center border border-hairline-divider/40">
+<span class="font-display text-display text-[#A337BA] font-bold tracking-tight">6</span>
+<span class="font-label text-caption text-text-secondary mt-space-xs font-medium">Scheduled</span>
+</div>
+<!-- Stat Tile 3: Drafts -->
+<div class="bg-surface rounded-[20px] p-space-md flex flex-col items-center justify-center shadow-soft-ambient text-center border border-hairline-divider/40">
+<span class="font-display text-display text-[#A337BA] font-bold tracking-tight">3</span>
+<span class="font-label text-caption text-text-secondary mt-space-xs font-medium">Drafts</span>
+</div>
+</section>
+<!-- Section 2: Focal Card ("Up next") -->
+<section aria-label="Up next queue" class="bg-surface rounded-[20px] p-space-lg shadow-soft-ambient border border-hairline-divider/60 flex flex-col">
+<!-- Header Tag / Kicker -->
+<div class="flex items-center gap-space-xs text-text-secondary mb-space-md">
+<span class="material-symbols-outlined text-[16px] text-[#A75906]">schedule</span>
+<span class="font-caption text-caption text-text-secondary font-medium tracking-wide">Up next · Tomorrow 6:00 am</span>
+</div>
+<!-- Card Body: Thumbnail & Details -->
+<div class="flex items-start gap-space-md mb-space-lg">
+<img alt="Studio recording microphone" class="w-[76px] h-[76px] rounded-[12px] object-cover shrink-0 shadow-inner border border-hairline-divider" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBINPVM3ypJm0y-VuUwcm6twyFTm8AI-Z8q_gPYro9er91bteKfYGs8xSjITGy4ZmuPBm1AlhcVFTkHetx7SorvnjnFvVLqPKr8OescJxin2xWnGoTn54UqsxCKDRlawawvJVJmkvuhG99MoJyI2dgfCaqkPH9cGDhgtjvqYigdd8Jw7bP4-EVB4G8XKxrDJvInsxVsBV0Q-PtLROP5pDigk5YYBzGR854MWdSqVT7AVFGBGjhsodOG8pe_UKo6pMxQ9a11qhiMATE"/>
+<div class="flex flex-col gap-space-xs flex-1">
+<h2 class="font-headline text-title text-text-primary leading-tight line-clamp-2">The quiet craft of audiobook narration</h2>
+<!-- Chips Container -->
+<div class="flex items-center flex-wrap gap-space-xs mt-1">
+<span class="h-6 px-space-sm rounded-full bg-accent-tint text-[#A337BA] font-label text-[12px] font-semibold flex items-center">
+                Daily read
+              </span>
+<span class="h-6 px-space-sm rounded-full bg-warning-bg text-warning-text font-label text-[12px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+                Scheduled
+              </span>
+</div>
+</div>
+</div>
+<!-- Primary Pill Action Button -->
+<button class="w-full h-12 rounded-full bg-[#A337BA] hover:bg-accent-fill-pressed active:scale-[0.98] transition-all text-on-primary font-label text-label font-medium flex items-center justify-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Publish now</span>
+</button>
+</section>
+<!-- Section 3: Schedule Management -->
+<section aria-label="Editorial schedule" class="flex flex-col gap-space-md">
+<!-- Section Header with Auxiliary Action -->
+<div class="flex items-center justify-between px-1">
+<h2 class="font-headline text-headline text-text-primary tracking-tight">Schedule</h2>
+<span class="font-caption text-caption text-text-tertiary">3 upcoming</span>
+</div>
+<!-- Grouped Schedule Card -->
+<div class="bg-surface rounded-[20px] shadow-soft-ambient border border-hairline-divider/60 overflow-hidden divide-y divide-hairline-divider">
+<!-- Schedule Row 1: Wed 11 Nov -->
+<article class="p-space-md hover:bg-surface-alt/40 transition-colors flex items-center justify-between gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-caption text-caption text-text-tertiary font-medium">Wed 11 Nov</span>
+<h3 class="font-headline text-[17px] leading-snug text-text-primary font-semibold">North of Quiet</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="h-5 px-2 rounded-full bg-accent-tint text-[#A337BA] font-label text-[11px] font-semibold flex items-center">
+                  New title
+                </span>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="h-6 px-2.5 rounded-full bg-warning-bg text-warning-text font-label text-[12px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                Scheduled
+              </span>
+</div>
+</article>
+<!-- Schedule Row 2: Thu 12 Nov -->
+<article class="p-space-md hover:bg-surface-alt/40 transition-colors flex items-center justify-between gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-caption text-caption text-text-tertiary font-medium">Thu 12 Nov</span>
+<h3 class="font-headline text-[17px] leading-snug text-text-primary font-semibold">Spring tide</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="h-5 px-2 rounded-full bg-accent-tint text-[#A337BA] font-label text-[11px] font-semibold flex items-center">
+                  Reference
+                </span>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="h-6 px-2.5 rounded-full bg-surface-alt text-text-secondary font-label text-[12px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+                Draft
+              </span>
+</div>
+</article>
+<!-- Schedule Row 3: Mon 9 Nov -->
+<article class="p-space-md hover:bg-surface-alt/40 transition-colors flex items-center justify-between gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-caption text-caption text-text-tertiary font-medium">Mon 9 Nov</span>
+<h3 class="font-headline text-[17px] leading-snug text-text-primary font-semibold">Why we still read by the sea</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="h-5 px-2 rounded-full bg-accent-tint text-[#A337BA] font-label text-[11px] font-semibold flex items-center">
+                  Daily read
+                </span>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="h-6 px-2.5 rounded-full bg-success-bg text-success-text font-label text-[12px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                Published
+              </span>
+</div>
+</article>
+</div>
+</section>
+<!-- Bottom Status Note -->
+<footer class="pt-space-md pb-space-lg text-center">
+<div class="inline-flex items-center gap-1.5 text-text-tertiary font-caption text-caption font-medium">
+<span class="material-symbols-outlined text-[15px] text-text-tertiary">cloud_sync</span>
+<span>Changes reach readers on their next sync</span>
+</div>
+</footer>
+</div>
+</main>
+</body></html>

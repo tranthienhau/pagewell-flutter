@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership - Pagewell</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#FAF4FC',
+              surface: '#FFFFFF',
+              surfaceAlt: '#F3E8F6',
+              accent: '#C64BE0',
+              accentFill: '#A337BA',
+              accentPressed: '#9B3BAF',
+              accentTint: '#F6E4FA',
+              textPrimary: '#1C0C1F',
+              textSecondary: '#574A5A',
+              textTertiary: '#76687A',
+              divider: '#EADCEE',
+              inputBorder: '#B085B4',
+              successText: '#0E7C3A',
+              successBg: '#E3F4E9',
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            display: ['Fraunces', 'serif'],
+          },
+          boxShadow: {
+            card: '0 1px 2px rgba(28,12,31,.04), 0 8px 24px rgba(28,12,31,.06)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #FAF4FC;
+      color: #1C0C1F;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hero-gradient {
+      background: linear-gradient(145deg, #A337BA 0%, #9B3BAF 100%);
+    }
+  </style>
+</head>
+<body class="bg-[#FAF4FC] text-[#1C0C1F] flex justify-center min-h-screen">
+  <main class="w-[393px] min-h-screen bg-[#FAF4FC] flex flex-col px-5 pt-[52px] pb-9 relative select-none">
+    
+    <!-- Top Bar: Close 'X' button -->
+    <header class="flex items-center justify-between mb-4">
+      <button type="button" aria-label="Close" class="w-10 h-10 rounded-full flex items-center justify-center text-[#1C0C1F] hover:bg-[#F3E8F6] active:scale-95 transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="w-10 h-10"></div> <!-- Balance spacing -->
+    </header>
+
+    <!-- Scrollable content wrapper -->
+    <div class="flex-1 flex flex-col">
+      
+      <!-- Focal Hero Card -->
+      <section class="hero-gradient rounded-[20px] p-6 text-white text-center shadow-card relative overflow-hidden mb-6">
+        <!-- Crown Icon Container -->
+        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+            <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.768a1 1 0 0 1-.967.746H5.82a1 1 0 0 1-.967-.746L2.019 6.019a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/>
+            <path d="M5 21h14"/>
+          </svg>
+        </div>
+
+        <!-- Title -->
+        <h1 class="font-display text-[32px] leading-[1.15] font-bold tracking-[-0.02em] mb-2 text-white">
+          Pagewell Premium
+        </h1>
+
+        <!-- Caption -->
+        <p class="text-white/90 text-[15px] font-normal tracking-normal leading-snug">
+          Every book, every voice, every day
+        </p>
+      </section>
+
+      <!-- Benefits List -->
+      <section class="mb-6 px-1">
+        <ul class="space-y-3">
+          <!-- Item 1 -->
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-[#F6E4FA] flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A337BA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-[16px] font-normal text-[#1C0C1F] leading-tight">Unlimited audiobooks</span>
+          </li>
+
+          <!-- Item 2 -->
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-[#F6E4FA] flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A337BA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-[16px] font-normal text-[#1C0C1F] leading-tight">The full reference library</span>
+          </li>
+
+          <!-- Item 3 -->
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-[#F6E4FA] flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A337BA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-[16px] font-normal text-[#1C0C1F] leading-tight">Offline downloads</span>
+          </li>
+
+          <!-- Item 4 -->
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-[#F6E4FA] flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A337BA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-[16px] font-normal text-[#1C0C1F] leading-tight">Every daily read and archive</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Plan Selection Cards Stacked -->
+      <section class="space-y-3 mb-6">
+        
+        <!-- Monthly Card (Unselected) -->
+        <label class="block relative bg-white border border-[#EADCEE] rounded-[20px] p-4 cursor-pointer hover:border-[#B085B4] transition-colors shadow-[0_1px_2px_rgba(28,12,31,0.03)]">
+          <input type="radio" name="plan" value="monthly" class="sr-only peer">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <!-- Radio Circle unselected -->
+              <div class="w-5 h-5 rounded-full border-[1.5px] border-[#B085B4] flex items-center justify-center shrink-0">
+              </div>
+              <span class="text-[16px] font-semibold text-[#1C0C1F]">Monthly</span>
+            </div>
+            <div class="text-right">
+              <span class="text-[16px] font-semibold text-[#1C0C1F]">$9.99</span>
+              <span class="text-[14px] text-[#574A5A] font-normal"> / month</span>
+            </div>
+          </div>
+        </label>
+
+        <!-- Annual Card (Selected) -->
+        <label class="block relative bg-white border-2 border-[#A337BA] rounded-[20px] p-4 cursor-pointer shadow-card">
+          <input type="radio" name="plan" value="annual" checked class="sr-only peer">
+          
+          <div class="flex items-start justify-between">
+            <div class="flex items-start gap-3">
+              <!-- Radio Circle selected -->
+              <div class="w-5 h-5 rounded-full border-2 border-[#A337BA] flex items-center justify-center mt-0.5 shrink-0">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#A337BA]"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[16px] font-bold text-[#1C0C1F]">Annual</span>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[12px] font-semibold bg-[#E3F4E9] text-[#0E7C3A]">
+                    Save 33%
+                  </span>
+                </div>
+                <p class="text-[13px] text-[#574A5A] font-medium mt-0.5">$6.67 / month</p>
+              </div>
+            </div>
+
+            <div class="text-right">
+              <span class="text-[16px] font-bold text-[#1C0C1F]">$79.99</span>
+              <span class="text-[14px] text-[#574A5A] font-normal"> / year</span>
+            </div>
+          </div>
+        </label>
+
+      </section>
+
+      <!-- Bottom CTAs & Disclaimers -->
+      <footer class="mt-auto flex flex-col items-center text-center pt-2">
+        <!-- Primary Action Button -->
+        <button type="button" class="w-full h-14 rounded-full bg-[#A337BA] hover:bg-[#9B3BAF] active:scale-[0.98] text-white text-[15px] font-semibold tracking-wide shadow-sm transition-all duration-150 mb-3 flex items-center justify-center">
+          Start 7-day free trial
+        </button>
+
+        <!-- Informational / Cancelation Caption -->
+        <p class="text-[14px] leading-relaxed text-[#574A5A] max-w-[320px] mb-3">
+          Cancel anytime. The free plan includes 3 books a month.
+        </p>
+
+        <!-- Restore Purchase Link -->
+        <button type="button" class="text-[14px] font-medium text-[#A337BA] hover:underline active:opacity-80 py-1 transition-opacity">
+          Restore purchase
+        </button>
+      </footer>
+
+    </div>
+  </main>
+</body>
+</html>

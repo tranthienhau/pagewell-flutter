@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Why we still read by the sea - Pagewell</title>
+<!-- Google Fonts: Fraunces & Outfit -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#eedeeb",
+            "surface-tint": "#9c1ab8",
+            "outline-variant": "#d5c0d3",
+            "surface-container-high": "#f4e4f0",
+            "primary-container": "#b63bd1",
+            "primary-fixed-dim": "#f6adff",
+            "accent-fill-pressed": "#9B3BAF",
+            "surface-variant": "#eedeeb",
+            "on-secondary-container": "#68007d",
+            "on-primary-fixed": "#350041",
+            "text-tertiary": "#76687A",
+            "support": "#A8D672",
+            "warning-text": "#A75906",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#dac84e",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#7a0093",
+            "warning-bg": "#FAEFE1",
+            "inverse-on-surface": "#fcecf9",
+            "surface-alt": "#F3E8F6",
+            "success-bg": "#E3F4E9",
+            "danger-text": "#CE2020",
+            "primary-fixed": "#fed6ff",
+            "on-tertiary-fixed-variant": "#504700",
+            "on-primary": "#ffffff",
+            "support-strong": "#6EA22E",
+            "on-secondary": "#ffffff",
+            "success-text": "#0E7C3A",
+            "hairline-divider": "#EADCEE",
+            "on-tertiary": "#ffffff",
+            "danger-bg": "#FBE5E5",
+            "text-primary": "#1C0C1F",
+            "surface-container-low": "#ffeffb",
+            "on-secondary-fixed-variant": "#7a0093",
+            "surface-dim": "#e5d5e2",
+            "outline": "#837282",
+            "on-surface": "#211922",
+            "on-primary-container": "#fffbff",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#350041",
+            "tertiary-fixed": "#f7e467",
+            "surface-container": "#f9e9f6",
+            "on-background": "#211922",
+            "error": "#ba1a1a",
+            "primary": "#9915b5",
+            "secondary-fixed-dim": "#f6adff",
+            "on-tertiary-fixed": "#201c00",
+            "on-error-container": "#93000a",
+            "secondary": "#972aae",
+            "inverse-surface": "#372d37",
+            "tertiary-container": "#bdac34",
+            "on-tertiary-container": "#484000",
+            "inverse-primary": "#f6adff",
+            "on-surface-variant": "#514251",
+            "surface": "#FFFFFF",
+            "secondary-fixed": "#fed6ff",
+            "surface-bright": "#fff7fa",
+            "tertiary": "#6a5f00",
+            "text-secondary": "#574A5A",
+            "control-border": "#B085B4",
+            "accent-tint": "#F6E4FA",
+            "background": "#FAF4FC",
+            "secondary-container": "#e979fd"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-md": "12px",
+            "space-lg": "16px",
+            "space-xl": "24px",
+            "margin": "20px",
+            "gutter": "16px",
+            "space-sm": "8px",
+            "space-2xl": "32px"
+          },
+          "fontFamily": {
+            "title": ["Outfit", "sans-serif"],
+            "reader-body": ["Fraunces", "serif"],
+            "label": ["Outfit", "sans-serif"],
+            "headline": ["Fraunces", "serif"],
+            "display": ["Fraunces", "serif"],
+            "caption": ["Outfit", "sans-serif"],
+            "legal": ["Outfit", "sans-serif"],
+            "body": ["Outfit", "sans-serif"]
+          },
+          "fontSize": {
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "reader-body": ["18px", { "lineHeight": "28.8px", "fontWeight": "400" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "legal": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          },
+          "boxShadow": {
+            "ambient": "0 1px 2px rgba(28,12,31,0.04), 0 8px 24px rgba(28,12,31,0.06)",
+            "floating": "0 4px 12px rgba(28,12,31,0.08), 0 1px 3px rgba(28,12,31,0.05)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Viewport Container (393px) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col shadow-2xl">
+<!-- Top Hero Section with Full-Bleed Image & Overlaid Floating Header -->
+<header class="relative w-full h-[300px] overflow-hidden bg-surface-alt">
+<!-- Full-bleed Photographic Hero Image -->
+<img alt="Atmospheric editorial photograph of a coastal lighthouse at dawn" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida/ALJJyrBTfWV-omw6dDUKOsngK9OaPCIjFMu2npNFYEZwsMLVYRrmxa75heQ9Wwwqu5IynHs6-tg9WB-AYZuylcu5n5HgGVFC7e4v_eNlKIVPEEAqLrryPrnvfqWqLCrrX9eG4omr6D6SvOuKKbX1ejqD_p499N17UdgWkd9p48WSWCDt6JGTF0VBkNhM7PaRW1oLvNh6XDRUUolL1-6228PiohUV4Ut0eQhAZUGlZ_xuMS97FSqvVl55Td7R-Eg"/>
+<!-- Subtle Gradient Scrim at Top for Icon Contrast -->
+<div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/25 via-black/5 to-transparent pointer-events-none"></div>
+<!-- Overlaid Floating Top App Bar (Shared Components Anchor: leading_icon arrow_back, trailing_icon bookmark) -->
+<nav class="docked full-width top-0 absolute z-50 flex justify-between items-center w-full px-space-lg pt-12 max-w-md mx-auto">
+<!-- Back Navigation Button -->
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-surface shadow-floating flex items-center justify-center text-text-primary hover:bg-surface-alt transition-colors active:scale-95 duration-150 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[20px] leading-none" data-icon="arrow_back">arrow_back</span>
+</button>
+<!-- Bookmark Action Button -->
+<button aria-label="Bookmark article" class="w-10 h-10 rounded-full bg-surface shadow-floating flex items-center justify-center text-text-primary hover:bg-surface-alt transition-colors active:scale-95 duration-150 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[20px] leading-none" data-icon="bookmark">bookmark</span>
+</button>
+</nav>
+</header>
+<!-- Article Content Sheet -->
+<article class="flex-1 px-5 pt-6 pb-[34px] flex flex-col">
+<!-- Meta Tag Chip -->
+<div class="mb-3.5">
+<span class="inline-flex items-center h-8 px-3.5 rounded-full bg-accent-tint text-primary font-caption text-caption font-medium tracking-normal">
+          Daily read • 9 Nov
+        </span>
+</div>
+<!-- Article Title -->
+<h1 class="font-display text-display text-text-primary tracking-tight mb-4">
+        Why we still read by the sea
+      </h1>
+<!-- Byline Row -->
+<section class="flex items-center gap-3 mb-6 pb-1">
+<img alt="Portrait of Clara Bennett" class="w-10 h-10 rounded-full object-cover shadow-sm ring-1 ring-hairline-divider" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbK1JUbxTqVJ3syMFbIoDQkAjU_QeTDVNb6WJktsiftlAFqD1ySEANPYTN3kOaeJd49Jd8NBToeHBW0IIurhbp8o-6tKWPIMhUDep_YMM6I47ugkV1NA2zLM0WtRnj8RoI1GAdhQ5uZ8kQiXIJZf053_2DJCLdEtSbt_eaVTBJ8kFZul_oBNujYYRk4Szsr3uVJaFBUVZ8XC4w2jECDUSy6aafBJ_6X_FrAiapJsr9ejfxUvKvz2VPCfkcpwCU1Vz5Q3dtOA54ssA"/>
+<div class="flex flex-col">
+<span class="font-body text-body font-semibold text-text-primary leading-tight">Clara Bennett</span>
+<span class="font-caption text-caption text-text-secondary leading-tight mt-0.5">6 min read</span>
+</div>
+</section>
+<!-- Primary Action: Listen to Article CTA -->
+<button class="w-full h-14 rounded-full bg-primary text-on-primary font-label text-label font-medium flex items-center justify-center gap-2 shadow-ambient hover:bg-accent-fill-pressed active:bg-accent-fill-pressed active:scale-[0.99] transition-all duration-150 mb-7 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="headphones">headphones</span>
+<span>Listen to this article</span>
+</button>
+<!-- Essay Body Content -->
+<div class="space-y-4 font-body text-body text-[#2C1830] leading-[1.65]">
+<p>
+          On coastal holidays, the clock resets itself against the tide. We pack books we promised ourselves we would finish months ago, carrying them across pebble coves and wooden boardwalks, knowing the rhythm of breaking water makes stillness feel earned rather than idle.
+        </p>
+<p>
+          Modern reading is often hurried between notifications and transit stops. But beside open water, attention lengthens. The horizon removes peripheral competition, turning each page into an unhurried, private conversation between the mind and the tide.
+        </p>
+<!-- Pull Quote -->
+<blockquote class="border-l-[3px] border-[#C64BE0] pl-4 py-2 my-6 font-headline italic font-reader-body text-[20px] leading-[28px] text-text-primary">
+          “A book by the water asks nothing of you but time.”
+        </blockquote>
+<p>
+          Even an hour on a windblown dune leaves salt on the paper and salt in the hair, a quiet reminder that stories, like tides, are best experienced when we surrender to their pace.
+        </p>
+</div>
+<!-- Editorial Mention Card -->
+<aside class="mt-8">
+<div class="bg-surface rounded-[20px] p-4 shadow-ambient border border-hairline-divider hover:shadow-floating transition-shadow duration-200">
+<p class="font-caption text-caption font-semibold text-text-tertiary uppercase tracking-wider mb-3">
+            Mentioned in this piece
+          </p>
+<div class="flex items-center gap-3.5 group cursor-pointer">
+<!-- Book Thumbnail -->
+<img alt="Book cover of The Salt Road" class="w-12 h-[72px] rounded-[8px] object-cover shadow-sm flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrBWzMqMA04Pas6ffDIKbqjomX6zlPOfmXhw3QGGEHFEvnkDWLohAtkiUFvepSvjxrABCkuFTCr_pZcgIMqwrCoMBvSHujNJsxivuswxwFaMfcrPHMkubGQbOySSWVOrH3NtgBSu0w-fS3S6gemDM4eomOshivfSDFR4pTrcisj1HcNXCwqt8Bz9FRvug2ppikwFNW8wf3Fx215Fp-gxMfcpyIQIWPbkNf7rsIZPijHRl5uaOwwmEN2FFlQ"/>
+<!-- Book Details -->
+<div class="flex-1 min-w-0">
+<h2 class="font-title text-[16px] leading-5 font-semibold text-text-primary truncate group-hover:text-primary transition-colors">
+                The Salt Road
+              </h2>
+<p class="font-caption text-caption text-text-secondary mt-1 truncate">
+                Imogen Hale • Novel &amp; Audiobook
+              </p>
+</div>
+<!-- Trailing Action -->
+<div class="flex-shrink-0 text-text-tertiary group-hover:text-primary group-hover:translate-x-0.5 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</aside>
+</article>
+</main>
+</body></html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, height=852, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Welcome to Pagewell</title>
+  <!-- Google Fonts: Fraunces & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#FAF4FC',
+              surface: '#FFFFFF',
+              surfaceAlt: '#F3E8F6',
+              accent: '#C64BE0',
+              accentFill: '#A337BA',
+              accentPressed: '#9B3BAF',
+              accentTint: '#F6E4FA',
+              textPrimary: '#1C0C1F',
+              textSecondary: '#574A5A',
+              textTertiary: '#76687A',
+              hairline: '#EADCEE',
+              border: '#B085B4',
+            }
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'serif'],
+            sans: ['Outfit', 'sans-serif'],
+          },
+          boxShadow: {
+            'card-soft': '0 1px 2px rgba(28,12,31,0.04), 0 8px 24px rgba(28,12,31,0.06)',
+            'photo-soft': '0 8px 30px rgba(28,12,31,0.08)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      width: 393px;
+      height: 852px;
+      margin: 0 auto;
+      background-color: #FAF4FC;
+      color: #1C0C1F;
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hide scrollbars for clean presentation */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg flex flex-col justify-between min-h-[852px] w-[393px] relative selection:bg-brand-accentTint selection:text-brand-accentFill">
+
+  <!-- Top Hero Section (52-54% height of screen) -->
+  <header class="relative w-full pt-3 px-4 flex flex-col items-center">
+    <!-- Status bar mock clear area -->
+    <div class="w-full h-8 flex items-center justify-between px-3 text-brand-textPrimary font-sans text-[14px] font-semibold tracking-tight">
+      <span>9:41</span>
+      <div class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-brand-textPrimary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        <svg class="w-4 h-4 text-brand-textPrimary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+        </svg>
+        <div class="w-5 h-2.5 border border-brand-textPrimary rounded-[3px] p-[1px] flex items-center">
+          <div class="h-full w-3/4 bg-brand-textPrimary rounded-[1px]"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Image Container (Rounded Photo) -->
+    <div class="w-full mt-2 h-[375px] rounded-[28px] overflow-hidden relative shadow-photo-soft border border-[#EADCEE]/60 bg-brand-surfaceAlt">
+      <img 
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuANVBCrMh4-2rn0G73QpbvzTaP6Z5ZvYpHag0tdPtqUqsnk1ldPHgx4Nbp35n7bvWDUFrXDEJ0LS3Ar3VNpj2U-0bZeoAgolbIlnmghKhpjqV54GFS2L6BVZDX6gMZAGYC5m1fEN8ABgn_B5OwzWKI8bhyXHFhhjh5wDemN4AB90HXjmbhkvv4ZKD-Iaqf6uXY44Xh5kVEtc23TTuyUa8I3afEu33HGq-Xe_akPHCIMwrzx50kSp6hYhYasPs791WvUtuhxVBLBXBQ" 
+        alt="Young woman peacefully reading in a sunlit armchair" 
+        class="w-full h-full object-cover object-center"
+      />
+      <!-- Subtle gentle vignette overlay at bottom of photo for seamless transition -->
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-textPrimary/25 via-transparent to-transparent pointer-events-none"></div>
+
+      <!-- Floating subtle badge -->
+      <div class="absolute top-4 left-4 bg-brand-surface/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/50 flex items-center gap-1.5 shadow-sm">
+        <div class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></div>
+        <span class="text-[12px] font-medium tracking-wide text-brand-textPrimary">Your Personal Sanctuary</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Bottom Content Section -->
+  <main class="flex-1 flex flex-col justify-between px-6 pt-5 pb-8">
+    <div>
+      <!-- App Name & Tagline -->
+      <div class="text-center">
+        <h1 class="font-serif text-[32px] font-bold text-brand-textPrimary tracking-[-0.02em] leading-tight">
+          Pagewell
+        </h1>
+        <p class="font-sans text-[15px] font-normal text-brand-textSecondary mt-1 tracking-normal">
+          Read and listen, all in one place
+        </p>
+      </div>
+
+      <!-- Feature Highlight Rows -->
+      <div class="mt-5 space-y-2.5">
+        <!-- Row 1: Ebooks -->
+        <div class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-2xl bg-brand-surface border border-brand-hairline shadow-card-soft">
+          <div class="w-10 h-10 rounded-xl bg-brand-accentTint flex items-center justify-center flex-shrink-0 text-brand-accentFill">
+            <!-- Book Open Icon (Lucide 24px style) -->
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-sans text-[14px] font-medium text-brand-textPrimary leading-snug">
+              Ebooks with a calm reader
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 2: Audiobooks -->
+        <div class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-2xl bg-brand-surface border border-brand-hairline shadow-card-soft">
+          <div class="w-10 h-10 rounded-xl bg-brand-accentTint flex items-center justify-center flex-shrink-0 text-brand-accentFill">
+            <!-- Headphones Icon (Lucide 24px style) -->
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-sans text-[14px] font-medium text-brand-textPrimary leading-snug">
+              Audiobooks that stream instantly
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 3: Daily Read -->
+        <div class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-2xl bg-brand-surface border border-brand-hairline shadow-card-soft">
+          <div class="w-10 h-10 rounded-xl bg-brand-accentTint flex items-center justify-center flex-shrink-0 text-brand-accentFill">
+            <!-- Sparkles/Sun/Newspaper editorial icon -->
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-sans text-[14px] font-medium text-brand-textPrimary leading-snug">
+              A fresh daily read
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions Footer -->
+    <footer class="mt-6 flex flex-col items-center gap-3">
+      <!-- Primary Pill Button -->
+      <button 
+        type="button"
+        class="w-full h-14 bg-[#A337BA] hover:bg-[#9B3BAF] active:scale-[0.985] transition-all duration-150 rounded-full flex items-center justify-center shadow-[0_4px_14px_rgba(163,55,186,0.35)] text-white font-sans text-[15px] font-semibold tracking-wide cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#A337BA] focus:ring-offset-2 focus:ring-offset-brand-bg"
+      >
+        Get started
+      </button>
+
+      <!-- Secondary Text Link -->
+      <button 
+        type="button" 
+        class="text-brand-accentFill hover:text-brand-accentPressed text-[14px] font-sans font-medium tracking-normal py-1 px-3 transition-colors cursor-pointer focus:outline-none focus:underline"
+      >
+        I already have an account
+      </button>
+
+      <!-- iOS Home Indicator Spacing -->
+      <div class="w-32 h-1 bg-brand-textPrimary/20 rounded-full mt-2"></div>
+    </footer>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Saved ,  Pagewell</title>
+<!-- Google Fonts: Fraunces & Outfit -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim as required -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#93000a",
+            "text-secondary": "#574A5A",
+            "on-secondary-fixed-variant": "#7a0093",
+            "warning-text": "#A75906",
+            "secondary-fixed-dim": "#f6adff",
+            "on-tertiary-fixed-variant": "#504700",
+            "tertiary-fixed-dim": "#dac84e",
+            "primary-fixed-dim": "#f6adff",
+            "hairline-divider": "#EADCEE",
+            "primary-fixed": "#fed6ff",
+            "inverse-on-surface": "#fcecf9",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#9c1ab8",
+            "surface-container-highest": "#eedeeb",
+            "inverse-surface": "#372d37",
+            "text-tertiary": "#76687A",
+            "text-primary": "#1C0C1F",
+            "on-primary-fixed": "#350041",
+            "surface-container-high": "#f4e4f0",
+            "outline": "#837282",
+            "success-text": "#0E7C3A",
+            "secondary-fixed": "#fed6ff",
+            "control-border": "#B085B4",
+            "surface-dim": "#e5d5e2",
+            "on-primary": "#ffffff",
+            "success-bg": "#E3F4E9",
+            "support": "#A8D672",
+            "on-secondary": "#ffffff",
+            "tertiary": "#6a5f00",
+            "on-tertiary-fixed": "#201c00",
+            "primary": "#9915b5",
+            "danger-bg": "#FBE5E5",
+            "on-surface-variant": "#514251",
+            "surface-bright": "#fff7fa",
+            "primary-container": "#b63bd1",
+            "warning-bg": "#FAEFE1",
+            "surface-container": "#f9e9f6",
+            "outline-variant": "#d5c0d3",
+            "surface-container-low": "#ffeffb",
+            "error-container": "#ffdad6",
+            "on-primary-container": "#fffbff",
+            "danger-text": "#CE2020",
+            "on-secondary-container": "#68007d",
+            "accent-tint": "#F6E4FA",
+            "accent-fill-pressed": "#9B3BAF",
+            "secondary": "#972aae",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#f6adff",
+            "on-tertiary-container": "#484000",
+            "on-background": "#211922",
+            "on-secondary-fixed": "#350041",
+            "surface": "#FFFFFF",
+            "background": "#FAF4FC",
+            "secondary-container": "#e979fd",
+            "surface-variant": "#eedeeb",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#f7e467",
+            "on-primary-fixed-variant": "#7a0093",
+            "surface-alt": "#F3E8F6",
+            "support-strong": "#6EA22E",
+            "on-surface": "#211922",
+            "on-error": "#ffffff",
+            "tertiary-container": "#bdac34"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "16px",
+            "space-sm": "8px",
+            "space-xs": "4px",
+            "space-xl": "24px",
+            "space-md": "12px",
+            "space-lg": "16px",
+            "space-2xl": "32px",
+            "margin": "20px"
+          },
+          "fontFamily": {
+            "display": ["Fraunces"],
+            "caption": ["Outfit"],
+            "headline": ["Fraunces"],
+            "title": ["Outfit"],
+            "reader-body": ["Fraunces"],
+            "legal": ["Outfit"],
+            "label": ["Outfit"],
+            "body": ["Outfit"]
+          },
+          "fontSize": {
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "headline": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "reader-body": ["18px", { "lineHeight": "28.8px", "fontWeight": "400" }],
+            "legal": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 16px);
+    }
+    .custom-card-shadow {
+      box-shadow: 0 1px 2px rgba(28, 12, 31, 0.04), 0 8px 24px rgba(28, 12, 31, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Frame Container (393px max width for mobile design precision) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background flex flex-col relative pb-[92px]">
+<!-- TopAppBar from Shared Components Specification -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md border-b border-hairline-divider flex justify-between items-center w-full px-5 py-3 h-[59px] shadow-sm">
+<h1 class="font-display text-display text-text-primary font-bold tracking-tight">Saved</h1>
+<div class="flex items-center">
+<button aria-label="User profile" class="relative rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-transform active:scale-95">
+<img alt="Ava Morgan" class="w-9 h-9 rounded-full object-cover border border-hairline-divider shadow-sm" src="https://lh3.googleusercontent.com/aida/ALJJyrAm8ij0dFgb_PcUcSBKJzKpSCJpLRssvor_0Kz9nPE7DzfbD-gT3eFCMWaSa1F0fZgwLeJ5rVBxOjxCokIPONn-L19u1hP8tchQjXGjP7V4csBwf1cgsj2tvJX256UwMxm6i_KSsIJm7r68LX7k88LksMhibSf8OG-kfSJm3A0oHj_fHVIPMS0_p6JFfUcO85oj5wMDbWxupYbYQvpF9zrnqpW49oojrSrNGMSSUaaTXmx6yCJu5xA3-Q"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-support border-2 border-surface rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<div class="px-5 pt-4 flex flex-col flex-grow">
+<!-- Segmented Control -->
+<section class="w-full mb-4">
+<div class="w-full p-1 bg-surface-alt rounded-full flex items-center justify-between shadow-inner">
+<button aria-selected="true" class="flex-1 py-2 text-center rounded-full bg-surface text-text-primary font-label text-label font-medium shadow-sm transition-all duration-200" type="button">
+            Bookmarks
+          </button>
+<button aria-selected="false" class="flex-1 py-2 text-center rounded-full text-text-secondary font-label text-label font-medium hover:text-text-primary transition-colors duration-200" type="button">
+            Favourites
+          </button>
+</div>
+</section>
+<!-- Metadata & Filter Row -->
+<section class="flex items-center justify-between mb-3.5 px-0.5">
+<p class="font-label text-caption text-text-secondary font-medium">4 bookmarks</p>
+<button aria-label="Filter bookmarks" class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors text-xs font-label font-medium py-1 px-2 rounded-lg hover:bg-surface" type="button">
+<span class="material-symbols-outlined text-base">swap_vert</span>
+<span class="font-label text-caption">Recent</span>
+</button>
+</section>
+<!-- Bookmarks List: Vertical Stack -->
+<div class="flex flex-col gap-3.5">
+<!-- Card 1: Ebook Bookmark ("The Salt Road") -->
+<article class="bg-surface rounded-[20px] p-4 custom-card-shadow transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="relative flex-shrink-0">
+<img alt="The Salt Road cover" class="w-12 h-18 aspect-[2/3] object-cover rounded-lg shadow-sm border border-hairline-divider" src="https://lh3.googleusercontent.com/aida/ALJJyrBWzMqMA04Pas6ffDIKbqjomX6zlPOfmXhw3QGGEHFEvnkDWLohAtkiUFvepSvjxrABCkuFTCr_pZcgIMqwrCoMBvSHujNJsxivuswxwFaMfcrPHMkubGQbOySSWVOrH3NtgBSu0w-fS3S6gemDM4eomOshivfSDFR4pTrcisj1HcNXCwqt8Bz9FRvug2ppikwFNW8wf3Fx215Fp-gxMfcpyIQIWPbkNf7rsIZPijHRl5uaOwwmEN2FFlQ"/>
+</div>
+<div class="flex flex-col pt-0.5">
+<h2 class="font-title text-body font-semibold text-text-primary leading-snug">The Salt Road</h2>
+<span class="font-caption text-caption text-text-secondary mt-0.5">Imogen Hale</span>
+<span class="font-caption text-legal text-text-tertiary mt-1">Page 131 · Chapter 2</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<button aria-label="Bookmarked" class="text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+<span class="font-caption text-legal text-text-tertiary">2h ago</span>
+</div>
+</div>
+<!-- Highlight / Snippet -->
+<blockquote class="mt-3.5 border-l-2 border-primary pl-3 py-1 bg-accent-tint/40 rounded-r-lg">
+<p class="font-reader-body italic text-text-primary text-sm leading-relaxed">
+              “The caravan left before dawn, when the salt still held the cold of the night.”
+            </p>
+</blockquote>
+</article>
+<!-- Card 2: Audio Bookmark ("Quiet Hours") -->
+<article class="bg-surface rounded-[20px] p-4 custom-card-shadow transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="relative flex-shrink-0">
+<img alt="Quiet Hours cover" class="w-12 h-18 aspect-[2/3] object-cover rounded-lg shadow-sm border border-hairline-divider" src="https://lh3.googleusercontent.com/aida/ALJJyrD3hCpfkcgA5dSRT1lvAhZEYP9EI9fWuPRISRnKxhstyBx3CyCIQpSf2FBUOihnfyPpV-x3Ef7tBW6Gdy_qVfGcm-WTbcwGb8gpIyEvb5ISN1c1-B4JUojszAgKY61E_4rfej2GFujYjycB49rPPHi80p4muD8-l27HhiRCqI_ffmkZz42lrUQMK12Q42Qwoi6Q1dK4NAXPtn453axrhWgmWQfEjRGCsaMGR4JWrCCSBrJfSwA76P7hv3M"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary rounded-full p-0.5 shadow flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px]">headphones</span>
+</div>
+</div>
+<div class="flex flex-col pt-0.5">
+<h2 class="font-title text-body font-semibold text-text-primary leading-snug">Quiet Hours</h2>
+<span class="font-caption text-caption text-text-secondary mt-0.5">Theo Marsh</span>
+<div class="flex items-center gap-1.5 mt-1.5 text-primary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-label text-caption font-medium tracking-tight">18:24 · Ch. 7 The Long Field</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<button aria-label="Bookmarked" class="text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+<span class="font-caption text-legal text-text-tertiary">Yesterday</span>
+</div>
+</div>
+<!-- Audio Waveform / Timestamp note pill -->
+<div class="mt-3 bg-surface-alt/70 px-3 py-2 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">graphic_eq</span>
+<span class="font-label text-legal text-text-secondary font-medium">Audiobook timestamp bookmark</span>
+</div>
+<span class="font-label text-legal text-text-tertiary">42% completed</span>
+</div>
+</article>
+<!-- Card 3: Reference Bookmark ("Tide") -->
+<article class="bg-surface rounded-[20px] p-4 custom-card-shadow transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<!-- Rounded Badge -->
+<div class="w-12 h-12 rounded-2xl bg-accent-tint flex items-center justify-center text-primary flex-shrink-0 shadow-sm border border-hairline-divider">
+<span class="font-display font-bold text-lg">Aa</span>
+</div>
+<div class="flex flex-col pt-0.5">
+<div class="flex items-center gap-2">
+<h2 class="font-display text-headline text-text-primary font-bold text-base leading-none">Tide</h2>
+<span class="inline-block bg-accent-tint text-primary font-label text-[11px] font-semibold px-2 py-0.5 rounded-full">
+                    Reference
+                  </span>
+</div>
+<p class="font-reader-body text-caption text-text-secondary mt-1.5 line-clamp-2 leading-relaxed">
+                  The regular rise and fall of the sea's surface, caused mainly by the pull of the moon and sun...
+                </p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0 ml-2">
+<button aria-label="Bookmarked" class="text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+<span class="font-caption text-legal text-text-tertiary">3 days ago</span>
+</div>
+</div>
+</article>
+<!-- Card 4: Article Bookmark ("Why we still read by the sea") -->
+<article class="bg-surface rounded-[20px] p-4 custom-card-shadow transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<img alt="Coastal lighthouse at dawn" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm border border-hairline-divider" src="https://lh3.googleusercontent.com/aida/ALJJyrBTfWV-omw6dDUKOsngK9OaPCIjFMu2npNFYEZwsMLVYRrmxa75heQ9Wwwqu5IynHs6-tg9WB-AYZuylcu5n5HgGVFC7e4v_eNlKIVPEEAqLrryPrnvfqWqLCrrX9eG4omr6D6SvOuKKbX1ejqD_p499N17UdgWkd9p48WSWCDt6JGTF0VBkNhM7PaRW1oLvNh6XDRUUolL1-6228PiohUV4Ut0eQhAZUGlZ_xuMS97FSqvVl55Td7R-Eg"/>
+<div class="flex flex-col pt-0.5">
+<span class="inline-flex items-center self-start bg-accent-tint text-primary font-label text-[11px] font-semibold px-2 py-0.5 rounded-full mb-1">
+                  Daily read · 9 Nov
+                </span>
+<h2 class="font-title text-caption font-semibold text-text-primary leading-snug">Why we still read by the sea</h2>
+<span class="font-caption text-legal text-text-secondary mt-0.5">Clara Bennett</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0 ml-2">
+<button aria-label="Bookmarked" class="text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+<span class="font-caption text-legal text-text-tertiary">Today</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Mini Player Component pinned above bottom tab bar -->
+<div class="fixed bottom-[68px] left-0 right-0 max-w-[393px] mx-auto px-4 z-40 pointer-events-none pb-2">
+<aside class="pointer-events-auto bg-surface/95 backdrop-blur-md rounded-2xl p-2.5 border border-hairline-divider shadow-lg flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<img alt="Current audio playing" class="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-hairline-divider" src="https://lh3.googleusercontent.com/aida/ALJJyrD3hCpfkcgA5dSRT1lvAhZEYP9EI9fWuPRISRnKxhstyBx3CyCIQpSf2FBUOihnfyPpV-x3Ef7tBW6Gdy_qVfGcm-WTbcwGb8gpIyEvb5ISN1c1-B4JUojszAgKY61E_4rfej2GFujYjycB49rPPHi80p4muD8-l27HhiRCqI_ffmkZz42lrUQMK12Q42Qwoi6Q1dK4NAXPtn453axrhWgmWQfEjRGCsaMGR4JWrCCSBrJfSwA76P7hv3M"/>
+<div class="truncate">
+<h3 class="font-title text-caption font-semibold text-text-primary truncate leading-tight">Quiet Hours</h3>
+<p class="font-caption text-legal text-text-secondary truncate">Theo Marsh · 18:24 remaining</p>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0 pr-1">
+<button aria-label="Play or pause audio" class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</aside>
+</div>
+<!-- BottomNavBar from Shared Components Specification -->
+<!-- Destination count: 5 ["Today", "Library", "Search", "Saved", "Profile"] -->
+<!-- "Saved" is the active item per Active State Hierarchy -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-safe bg-surface border-t border-hairline-divider h-[68px] shadow-sm max-w-[393px] mx-auto right-0">
+<!-- Tab 1: Today -->
+<button aria-label="Today" class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+<span class="font-label text-legal mt-0.5">Today</span>
+</button>
+<!-- Tab 2: Library -->
+<button aria-label="Library" class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined text-[22px]">local_library</span>
+<span class="font-label text-legal mt-0.5">Library</span>
+</button>
+<!-- Tab 3: Search -->
+<button aria-label="Search" class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined text-[22px]">search</span>
+<span class="font-label text-legal mt-0.5">Search</span>
+</button>
+<!-- Tab 4: Saved (ACTIVE) -->
+<button aria-current="page" aria-label="Saved" class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-3 py-1 transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+<span class="font-label text-legal font-semibold mt-0.5">Saved</span>
+</button>
+<!-- Tab 5: Profile -->
+<button aria-label="Profile" class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined text-[22px]">person</span>
+<span class="font-label text-legal mt-0.5">Profile</span>
+</button>
+</nav>
+</main>
+</body></html>

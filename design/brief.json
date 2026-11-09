@@ -1,0 +1,402 @@
+{
+  "title": "Pagewell",
+  "slug": "pagewell",
+  "domain": "media",
+  "style": "bright",
+  "allow3D": false,
+  "features": [
+    "Ebook library (ebooks + audiobooks) with EPUB reading support: chapters, adjustable text size, theme, reading progress",
+    "Audiobook streaming and playback: play/pause, 15s skip, speed, chapter list, sleep timer, buffering indicator",
+    "Searchable content and reference library: full-text search across books, articles and reference entries with filters",
+    "Daily editorial content: a daily featured article and reading picks on the Today screen",
+    "User accounts: sign in / create account, profile with reading stats",
+    "Bookmarks and favourites: bookmark a page or audio position, favourite a book",
+    "Free and premium membership: premium badge on locked titles, paywall with monthly/annual plans",
+    "Content management for ongoing updates: an editor studio that schedules and publishes daily content (simulated CMS feed)"
+  ],
+  "screenCount": 15,
+  "sharedComponents": {
+    "bottomTabBar": {
+      "tabs": [
+        "Today",
+        "Library",
+        "Search",
+        "Saved",
+        "Profile"
+      ],
+      "icons": [
+        "sun",
+        "library",
+        "search",
+        "bookmark",
+        "user"
+      ],
+      "note": "Flat white bar, 1px top border, 5 tabs in this exact order. Active tab: icon + label in accentFill #A337BA with a small accentTint pill behind the icon; inactive: text.secondary."
+    },
+    "statusBar": "Top header row: screen title left in the display serif, small round avatar right.",
+    "controls": "Primary button: pill, 56px, accentFill with white label. Secondary: pill, white with 1.5px borderStrong border, ink label. Input: 12px radius, 52px, white, borderStrong border, focus 2px accentFill ring. Card: white, 20px radius, soft shadow. Chip: pill 32px, accentTint fill, accentFill 13px label. Book cover: 2:3 ratio, 12px radius, soft shadow. Premium badge: small pill, ink fill, white 12px 'Premium' label with crown icon. Mini player: white card pinned above the tab bar with cover, title, play button."
+  },
+  "screens": [
+    {
+      "name": "welcome",
+      "purpose": "First launch: brand, value proposition, start or sign in",
+      "content": "Large photo of a person reading in a sunlit armchair with headphones on the side table; app name Pagewell in display serif; tagline 'Read and listen, all in one place'; three short points (Ebooks, Audiobooks, Daily reads); primary 'Get started', text link 'I already have an account'.",
+      "group": "onboarding",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "sign-in",
+      "purpose": "Sign in to sync library, bookmarks and membership",
+      "content": "Title 'Welcome back'; email field prefilled ava.morgan@mail.com; password field; 'Forgot password?' link; primary 'Sign in'; divider 'or'; secondary 'Continue as guest'; small text 'New here? Create account'.",
+      "group": "onboarding",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "today",
+      "purpose": "Daily editorial home: today's featured article, continue reading/listening, new releases",
+      "content": "Header 'Good morning, Ava' + date 'Monday 9 November'; focal hero card 'Today's read' with photo of a coastal lighthouse at dawn, article title 'Why we still read by the sea', 6 min read; 'Continue' row: book 'The Salt Road' by Imogen Hale 42% progress bar and audiobook 'Quiet Hours' by Theo Marsh 1h 12m left; 'New this week' horizontal covers row (4 books, one with Premium badge); mini player pinned above tab bar showing Quiet Hours.",
+      "group": "core",
+      "nav": "Today",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "library",
+      "purpose": "Browse owned and available ebooks and audiobooks",
+      "content": "Title 'Library'; segmented control All / Ebooks / Audiobooks; filter chips Downloaded, In progress, Finished; 2-column grid of 6 book covers with title, author, format icon (book or headphones), progress bar on started ones, Premium badge on 2.",
+      "group": "core",
+      "nav": "Library",
+      "states": [
+        "default",
+        "empty"
+      ]
+    },
+    {
+      "name": "library-empty",
+      "purpose": "Empty library for a new account",
+      "content": "Title 'Library'; same segmented control; real photo of an empty wooden bookshelf with a plant; heading 'Your shelf is empty'; body 'Add a free ebook or audiobook to start'; primary 'Browse free titles'.",
+      "group": "core",
+      "nav": "Library",
+      "states": [
+        "empty"
+      ]
+    },
+    {
+      "name": "book-detail",
+      "purpose": "Book page: read or listen, favourite, chapters",
+      "content": "Back arrow + heart (favourite) + share icons; large cover of 'The Salt Road' (real photo cover style: desert road at sunset); title, author Imogen Hale, rating 4.6, chips 'Ebook + Audio', '312 pages', '9h 40m'; two buttons: primary 'Read' and secondary 'Listen'; synopsis paragraph; 'Chapters' list with 3 rows (1 The Well, 2 Salt and Dust, 3 Night Market) and durations.",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "reader",
+      "purpose": "EPUB reader with chapter text, bookmark and text settings",
+      "content": "Minimal top bar: back, chapter title 'Chapter 2 - Salt and Dust', bookmark icon (filled, accent), 'Aa' text settings icon; large readable serif body text, several paragraphs of a novel page about a caravan crossing salt flats; bottom: thin progress bar 42%, 'Page 131 of 312', '11 min left in chapter'. Optional bottom sheet peek with text size slider and theme dots (Light, Sepia, Dark).",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "player",
+      "purpose": "Audiobook streaming playback",
+      "content": "Down chevron + 'Now playing' + more icon; focal large square cover of 'Quiet Hours' by Theo Marsh (real photo of a misty forest morning); chapter 'Chapter 7 - The Long Field'; scrubber 18:24 / 42:10 with a lighter buffered section; controls: back 15s, big round play/pause in accentFill, forward 15s; row: speed '1.25x', sleep timer '15 min', bookmark, chapters list icon; caption 'Streaming - 64 kbps'.",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "search",
+      "purpose": "Search books, articles and the reference library",
+      "content": "Title 'Search'; search field with query 'tide'; filter chips All, Books, Articles, Reference (Reference active); results grouped: 'Reference' 2 entries (Tide - glossary entry, Tidal bore - glossary entry) with short definitions; 'Books' 1 row (The Tide Keeper by Lena Ortiz, Premium); 'Articles' 1 row (Reading the tide tables, 4 min). Highlight matched word in accent.",
+      "group": "core",
+      "nav": "Search",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "reference-entry",
+      "purpose": "Reference library entry (glossary / encyclopedia style)",
+      "content": "Back + bookmark; label chip 'Reference - Nature'; display title 'Tide'; pronunciation and part of speech; definition paragraph; 'Did you know' highlighted card; 'Related entries' chips (Spring tide, Neap tide, Tidal bore); 'Appears in' row with 2 small book covers.",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "article",
+      "purpose": "Read the daily editorial article",
+      "content": "Full-bleed top photo of a coastal lighthouse at dawn; chip 'Daily read - 9 Nov'; display title 'Why we still read by the sea'; byline 'By Clara Bennett - 6 min read'; listen-to-article pill button; 3 paragraphs of essay text; pull quote in accent; footer 'Mentioned books' card with The Salt Road cover.",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "saved",
+      "purpose": "Bookmarks and favourites",
+      "content": "Title 'Saved'; segmented control Bookmarks / Favourites; bookmark rows: book cover thumb, title, 'Page 131 - Chapter 2', quoted snippet of text, time ago; audio bookmark row with headphones icon '18:24 - Chapter 7'; reference bookmark 'Tide'.",
+      "group": "core",
+      "nav": "Saved",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "membership",
+      "purpose": "Free vs Premium paywall",
+      "content": "Close X; focal gradient hero card 'Pagewell Premium' with crown icon; benefits list (Unlimited audiobooks, Full reference library, Offline downloads, No limits on daily reads); plan cards: Monthly $9.99 and Annual $79.99 (selected, 'Save 33%' badge); primary 'Start 7-day free trial'; small text 'Cancel anytime. Free plan keeps 3 books a month.'",
+      "group": "settings",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "profile",
+      "purpose": "Account, membership, stats and settings",
+      "content": "Avatar photo of Ava Morgan (smiling woman, 30s) + name + email; membership card 'Free plan - 2 of 3 books this month' with 'Upgrade' button; stats row: 14 books, 36h listened, 21 day streak; settings rows: Downloads, Reading preferences, Notifications, Editor studio, Sign out.",
+      "group": "settings",
+      "nav": "Profile",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "editor-studio",
+      "purpose": "Content management: schedule and publish daily content and new titles",
+      "content": "Back + title 'Editor studio'; stat chips Published 128, Scheduled 6, Drafts 3; 'Schedule' list: rows with date, title, type chip (Daily read, New title, Reference) and status chip (Scheduled, Draft, Published); focal card 'Tomorrow - The quiet craft of audiobook narration' with 'Publish now' primary button; caption 'Changes reach readers on next sync'.",
+      "group": "settings",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    }
+  ],
+  "designSystem": {
+    "variant": "P44",
+    "theme": "light",
+    "frame": "393x852 mobile, top inset 59px, bottom inset 34px",
+    "color": {
+      "background": "#FAF4FC",
+      "surface": "#FFFFFF",
+      "surfaceAlt": "#F3E8F6",
+      "accent": "#C64BE0",
+      "accentFill": "#A337BA",
+      "accentTint": "#F6E4FA",
+      "accentPressed": "#9B3BAF",
+      "support": "#A8D672",
+      "text": {
+        "primary": "#1C0C1F",
+        "secondary": "#574A5A",
+        "tertiary": "#76687A"
+      },
+      "border": "#EADCEE",
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "danger": "#DC2626",
+      "gradient": [
+        "#A337BA",
+        "#9B3BAF"
+      ],
+      "statusOn": {
+        "warning": {
+          "fg": "#A75906",
+          "tint": "#FAEFE1"
+        },
+        "success": {
+          "fg": "#0E7C3A",
+          "tint": "#E3F4E9"
+        },
+        "danger": {
+          "fg": "#CE2020",
+          "tint": "#FBE5E5"
+        },
+        "info": {
+          "fg": "#A337BA",
+          "tint": "#F4E7F7"
+        }
+      },
+      "supportStrong": "#6EA22E",
+      "borderStrong": "#B085B4"
+    },
+    "type": {
+      "fontFamily": "Outfit",
+      "displayFamily": "Fraunces",
+      "numeralFamily": "Outfit",
+      "readerFamily": "Fraunces",
+      "display": "32 / 700 / -0.02em",
+      "title": "20 / 600",
+      "body": "16 / 400",
+      "label": "14 / 500",
+      "caption": "13 / 500",
+      "minSize": "12px (13px chips and tags, 14px safety or legal text)",
+      "scaleRule": "Use only the 5 declared sizes (display, title, body, label, caption)."
+    },
+    "radius": {
+      "card": 20,
+      "control": 14,
+      "input": 12,
+      "pill": 999
+    },
+    "spacing": "8pt scale (4, 8, 12, 16, 24, 32); screen edge padding 20px",
+    "elevation": "card = 0 1px 2px rgba(28,12,31,.04) + 0 8px 24px rgba(28,12,31,.06)",
+    "icons": "Lucide rounded outline, 24px, 1.75 stroke",
+    "a11y": "white labels only on accentFill; bright accent for large fills/icons; text on gradients >= 4.5:1; tap targets >= 44pt"
+  },
+  "bannedTerms": [
+    "AI narrator",
+    "Podcast",
+    "Social feed",
+    "Comments",
+    "NFT",
+    "Live audio"
+  ],
+  "tokenCheck": {
+    "results": [
+      {
+        "pair": "text.primary on background",
+        "ratio": 17.3,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.primary on surface",
+        "ratio": 18.72,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on background",
+        "ratio": 7.66,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on surface",
+        "ratio": 8.29,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.tertiary on background",
+        "ratio": 4.81,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.tertiary on surface",
+        "ratio": 5.21,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white label on accentFill (buttons)",
+        "ratio": 4.69,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "accentFill text on accentTint (chips, selected)",
+        "ratio": 3.89,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#A337BA",
+        "after": 4.56
+      },
+      {
+        "pair": "accentFill as link text on background",
+        "ratio": 5.09,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white on hero gradient (both stops)",
+        "ratio": 5.51,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "warning text on its tint and on surface",
+        "ratio": 2.81,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#A75906",
+        "after": 4.54
+      },
+      {
+        "pair": "success text on its tint and on surface",
+        "ratio": 2.89,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#0E7C3A",
+        "after": 4.64
+      },
+      {
+        "pair": "danger text on its tint and on surface",
+        "ratio": 4.01,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#CE2020",
+        "after": 4.53
+      },
+      {
+        "pair": "support as chart line / icon on surface (non-text 3:1)",
+        "ratio": 1.68,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#6EA22E",
+        "after": 3.06
+      },
+      {
+        "pair": "input / control border on surface (non-text 3:1)",
+        "ratio": 1.31,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#B085B4",
+        "after": 3.06
+      }
+    ],
+    "changed": {
+      "accentFill": {
+        "from": "#A337BA",
+        "to": "#A337BA"
+      }
+    },
+    "passed": true
+  }
+}

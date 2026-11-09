@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, initial-scale=1.0">
+  <title>Library - Pagewell</title>
+  <!-- Google Fonts: Outfit and Fraunces -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#FAF4FC',
+              surface: '#FFFFFF',
+              'surface-alt': '#F3E8F6',
+              accent: '#C64BE0',
+              'accent-fill': '#A337BA',
+              'accent-pressed': '#9B3BAF',
+              'accent-tint': '#F6E4FA',
+              support: '#A8D672',
+              'support-strong': '#6EA22E',
+              'text-primary': '#1C0C1F',
+              'text-secondary': '#574A5A',
+              'text-tertiary': '#76687A',
+              divider: '#EADCEE',
+              border: '#B085B4',
+              badge: '#1C0C1F'
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            display: ['Fraunces', 'serif']
+          },
+          boxShadow: {
+            'book': '0 2px 4px rgba(28, 12, 31, 0.05), 0 8px 20px rgba(28, 12, 31, 0.08)',
+            'nav': '0 -1px 0 #EADCEE'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAF4FC;
+      color: #1C0C1F;
+      font-family: 'Outfit', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="flex justify-center bg-[#FAF4FC] min-h-screen">
+  <!-- Mobile Container (393px standard) -->
+  <div class="relative w-full max-w-[393px] min-h-screen bg-[#FAF4FC] flex flex-col pb-28">
+
+    <!-- Status Bar (iOS standard 59px) -->
+    <div class="h-12 w-full pt-3 px-7 flex items-center justify-between text-xs font-semibold text-[#1C0C1F] select-none z-20">
+      <span>9:41</span>
+      <div class="flex items-center space-x-2">
+        <!-- Cellular Signal -->
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+          <rect x="2" y="16" width="3.5" height="6" rx="1" />
+          <rect x="7.5" y="12" width="3.5" height="10" rx="1" />
+          <rect x="13" y="7" width="3.5" height="15" rx="1" />
+          <rect x="18.5" y="3" width="3.5" height="19" rx="1" />
+        </svg>
+        <!-- Wifi -->
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98A16.88 16.88 0 0 0 12 4zm0 3.2c3.78 0 7.22 1.5 9.76 3.96L12 19.16 2.24 11.16C4.78 8.7 8.22 7.2 12 7.2z"/>
+        </svg>
+        <!-- Battery -->
+        <div class="w-5 h-2.5 rounded-sm border border-[#1C0C1F] p-0.5 flex items-center">
+          <div class="w-full h-full bg-[#1C0C1F] rounded-2xs"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header: Title in Fraunces 32 + Avatar Right -->
+    <div class="px-5 pt-2 pb-4 flex items-center justify-between">
+      <h1 class="font-display text-[32px] font-bold leading-tight tracking-[-0.02em] text-[#1C0C1F]">
+        Library
+      </h1>
+      <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm ring-1 ring-[#EADCEE] flex-shrink-0 cursor-pointer">
+        <img src="https://lh3.googleusercontent.com/aida/ALJJyrAm8ij0dFgb_PcUcSBKJzKpSCJpLRssvor_0Kz9nPE7DzfbD-gT3eFCMWaSa1F0fZgwLeJ5rVBxOjxCokIPONn-L19u1hP8tchQjXGjP7V4csBwf1cgsj2tvJX256UwMxm6i_KSsIJm7r68LX7k88LksMhibSf8OG-kfSJm3A0oHj_fHVIPMS0_p6JFfUcO85oj5wMDbWxupYbYQvpF9zrnqpW49oojrSrNGMSSUaaTXmx6yCJu5xA3-Q" alt="Ava Morgan" class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <!-- Segmented Control: "All | Ebooks | Audiobooks" -->
+    <!-- #F3E8F6 track, white selected "All" with ink label -->
+    <div class="px-5 mb-4">
+      <div class="p-1 bg-[#F3E8F6] rounded-xl flex items-center gap-1">
+        <button class="flex-1 py-1.5 px-3 rounded-[10px] bg-white text-[#1C0C1F] font-semibold text-[13px] shadow-sm text-center transition-all">
+          All
+        </button>
+        <button class="flex-1 py-1.5 px-3 rounded-[10px] text-[#574A5A] hover:text-[#1C0C1F] font-medium text-[13px] text-center transition-all">
+          Ebooks
+        </button>
+        <button class="flex-1 py-1.5 px-3 rounded-[10px] text-[#574A5A] hover:text-[#1C0C1F] font-medium text-[13px] text-center transition-all">
+          Audiobooks
+        </button>
+      </div>
+    </div>
+
+    <!-- Filter Chips Row -->
+    <!-- "Downloaded", "In progress" (selected, #F6E4FA fill #A337BA text), "Finished" -->
+    <div class="px-5 mb-5 flex items-center gap-2 overflow-x-auto hide-scrollbar">
+      <button class="px-3.5 py-1.5 h-8 rounded-full bg-white border border-[#EADCEE] text-[#574A5A] text-[13px] font-medium whitespace-nowrap active:scale-95 transition-transform flex items-center">
+        Downloaded
+      </button>
+      <button class="px-3.5 py-1.5 h-8 rounded-full bg-[#F6E4FA] text-[#A337BA] text-[13px] font-semibold whitespace-nowrap active:scale-95 transition-transform flex items-center shadow-xs">
+        In progress
+      </button>
+      <button class="px-3.5 py-1.5 h-8 rounded-full bg-white border border-[#EADCEE] text-[#574A5A] text-[13px] font-medium whitespace-nowrap active:scale-95 transition-transform flex items-center">
+        Finished
+      </button>
+    </div>
+
+    <!-- 2-Column Grid of 6 Books -->
+    <div class="px-5 grid grid-cols-2 gap-x-4 gap-y-6">
+      
+      <!-- Book 1: The Salt Road (Imogen Hale) - Ebook, 42% progress -->
+      <div class="flex flex-col group cursor-pointer">
+        <div class="relative w-full aspect-[2/3] rounded-[12px] overflow-hidden shadow-book bg-[#F3E8F6]">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrBWzMqMA04Pas6ffDIKbqjomX6zlPOfmXhw3QGGEHFEvnkDWLohAtkiUFvepSvjxrABCkuFTCr_pZcgIMqwrCoMBvSHujNJsxivuswxwFaMfcrPHMkubGQbOySSWVOrH3NtgBSu0w-fS3S6gemDM4eomOshivfSDFR4pTrcisj1HcNXCwqt8Bz9FRvug2ppikwFNW8wf3Fx215Fp-gxMfcpyIQIWPbkNf7rsIZPijHRl5uaOwwmEN2FFlQ" alt="The Salt Road" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+        </div>
+        <div class="mt-2.5 flex flex-col">
+          <div class="flex items-start justify-between gap-1">
+            <h2 class="text-[14px] font-semibold text-[#1C0C1F] leading-snug line-clamp-1">
+              The Salt Road
+            </h2>
+            <!-- Book Icon (Ebook) -->
+            <svg class="w-3.5 h-3.5 mt-0.5 text-[#76687A] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-0.05"/>
+              <path d="M6 2v20"/>
+            </svg>
+          </div>
+          <span class="text-[12px] text-[#574A5A] leading-tight mt-0.5">Imogen Hale</span>
+          <!-- 42% Progress Bar -->
+          <div class="mt-2 flex items-center gap-2">
+            <div class="flex-1 h-1.5 bg-[#F3E8F6] rounded-full overflow-hidden">
+              <div class="h-full bg-[#C64BE0] rounded-full" style="width: 42%;"></div>
+            </div>
+            <span class="text-[11px] font-medium text-[#76687A]">42%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2: Quiet Hours (Theo Marsh) - Audiobook, 64% progress -->
+      <div class="flex flex-col group cursor-pointer">
+        <div class="relative w-full aspect-[2/3] rounded-[12px] overflow-hidden shadow-book bg-[#F3E8F6]">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrD3hCpfkcgA5dSRT1lvAhZEYP9EI9fWuPRISRnKxhstyBx3CyCIQpSf2FBUOihnfyPpV-x3Ef7tBW6Gdy_qVfGcm-WTbcwGb8gpIyEvb5ISN1c1-B4JUojszAgKY61E_4rfej2GFujYjycB49rPPHi80p4muD8-l27HhiRCqI_ffmkZz42lrUQMK12Q42Qwoi6Q1dK4NAXPtn453axrhWgmWQfEjRGCsaMGR4JWrCCSBrJfSwA76P7hv3M" alt="Quiet Hours" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+        </div>
+        <div class="mt-2.5 flex flex-col">
+          <div class="flex items-start justify-between gap-1">
+            <h2 class="text-[14px] font-semibold text-[#1C0C1F] leading-snug line-clamp-1">
+              Quiet Hours
+            </h2>
+            <!-- Headphones Icon (Audiobook) -->
+            <svg class="w-3.5 h-3.5 mt-0.5 text-[#A337BA] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>
+            </svg>
+          </div>
+          <span class="text-[12px] text-[#574A5A] leading-tight mt-0.5">Theo Marsh</span>
+          <!-- 64% Progress Bar -->
+          <div class="mt-2 flex items-center gap-2">
+            <div class="flex-1 h-1.5 bg-[#F3E8F6] rounded-full overflow-hidden">
+              <div class="h-full bg-[#C64BE0] rounded-full" style="width: 64%;"></div>
+            </div>
+            <span class="text-[11px] font-medium text-[#76687A]">64%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 3: The Tide Keeper (Lena Ortiz) - Premium badge on cover -->
+      <div class="flex flex-col group cursor-pointer">
+        <div class="relative w-full aspect-[2/3] rounded-[12px] overflow-hidden shadow-book bg-[#F3E8F6]">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrAw71x5pZAh7b6M-PryAANvG6KcmLX4mAaxKuhL9RoOit7tADs-fp-rzuvtqOiSCArP1lxn_gikx3z8fLZYoapaVYMlHwsv-Ci2oM5ELeyZxlD3gn1PS7PG39tA-uZo0kJL7zKflwgXNcQOemnnck8dcdKtg9pI0bo-86AlM3qEzflam2v-WlibZUJ5xXvxTYrnZuIk0kc-A6ujhvmrN7A4_mGY5vGKG3xVmhpOEqrlnUWa0udeozQFr9A" alt="The Tide Keeper" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+          <!-- Premium Ink Badge -->
+          <span class="absolute top-2.5 left-2.5 bg-[#1C0C1F] text-white text-[11px] font-medium px-2 py-0.5 rounded-full shadow-sm tracking-wide">
+            Premium
+          </span>
+        </div>
+        <div class="mt-2.5 flex flex-col">
+          <div class="flex items-start justify-between gap-1">
+            <h2 class="text-[14px] font-semibold text-[#1C0C1F] leading-snug line-clamp-1">
+              The Tide Keeper
+            </h2>
+            <!-- Book Icon (Ebook) -->
+            <svg class="w-3.5 h-3.5 mt-0.5 text-[#76687A] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-0.05"/>
+              <path d="M6 2v20"/>
+            </svg>
+          </div>
+          <span class="text-[12px] text-[#574A5A] leading-tight mt-0.5">Lena Ortiz</span>
+        </div>
+      </div>
+
+      <!-- Book 4: Lanterns in the Archive (Jonah Reyes) -->
+      <div class="flex flex-col group cursor-pointer">
+        <div class="relative w-full aspect-[2/3] rounded-[12px] overflow-hidden shadow-book bg-[#F3E8F6]">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrBFpgMhDCRHm8OcFzrKzzq-PL_bN8722vKd3WOWmDkpN9vFk2l9VQj2WLlqLjqEGDuwu18cspXdsdpKaLHS-asTalQEIwTD7re-3t7WVnISbPFIcCQbDsC2GMTTg6PucwMoqEmqO8V3qk3_98CKa4ZjtDsK7-2OxOrNOboLfU_I7eFXqFM6_bva7R3OlsjkInGhz7ImfTWtEPjYhiJow1_SYn5_zmbLIKth-b3wj1yr8SzaJ8QDCVwvDA" alt="Lanterns in the Archive" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+        </div>
+        <div class="mt-2.5 flex flex-col">
+          <div class="flex items-start justify-between gap-1">
+            <h2 class="text-[14px] font-semibold text-[#1C0C1F] leading-snug line-clamp-1">
+              Lanterns in the Archive
+            </h2>
+            <!-- Book Icon (Ebook) -->
+            <svg class="w-3.5 h-3.5 mt-0.5 text-[#76687A] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-0.05"/>
+              <path d="M6 2v20"/>
+            </svg>
+          </div>
+          <span class="text-[12px] text-[#574A5A] leading-tight mt-0.5">Jonah Reyes</span>
+        </div>
+      </div>
+
+      <!-- Book 5: A Field Guide to Small Rivers (Priya Nair) - Audiobook -->
+      <div class="flex flex-col group cursor-pointer">
+        <div class="relative w-full aspect-[2/3] rounded-[12px] overflow-hidden shadow-book bg-[#F3E8F6]">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDtJv31sA9ctEx0JxkFUyXpKCxgjjIz6ADAe1pr0sumb78qarzLktgVgK-SHshZ1yqr-arLcnKFH1Mf4ubx45kUVMyBb-M8jFpJhApX-2XixBHHXK2ugblzrH1GuHjaFAsUfx1lW_SKCtMGL--I-5yO1IZm7wtPy-zA85CSXx51E5rs4dFkH0dyukC8xiYisTuYo0YIo9cQQForD5GBNVwMvcb3xD5XpkbEOaToObnbMsm-ozh7aQgp3Y4" alt="A Field Guide to Small Rivers" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+        </div>
+        <div class="mt-2.5 flex flex-col">
+          <div class="flex items-start justify-between gap-1">
+            <h2 class="text-[14px] font-semibold text-[#1C0C1F] leading-snug line-clamp-1">
+              A Field Guide to Small Rivers
+            </h2>
+            <!-- Headphones Icon (Audiobook) -->
+            <svg class="w-3.5 h-3.5 mt-0.5 text-[#A337BA] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>
+            </svg>
+          </div>
+          <span class="text-[12px] text-[#574A5A] leading-tight mt-0.5">Priya Nair</span>
+        </div>
+      </div>
+
+      <!-- Book 6: North of Quiet (Mara Ellis) - Premium badge -->
+      <div class="flex flex-col group cursor-pointer">
+        <div class="relative w-full aspect-[2/3] rounded-[12px] overflow-hidden shadow-book bg-[#F3E8F6]">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrBhyiovzhtZ-MtDdyR-3vFsTyBMCoDwskYHftLuNgdXVADzkVAT2jGf7VlqrpBJNhnnA85fBKM0G5bT-Y54qdIsdHGMtfPt8M-XMrOeBNVPTvXUtB_pO5IuEcOpJ46oVsrfZY9KzgI_qKNt_SM2gUxqN6BT8gz7MfotIjCL3wbsVIttSoxCOnSKuWUE4b9Fx-bJVznCDY7rVJ2u9xxRRSkXqIKuxuQweYPpqjFKOtl7ImWTpFDwI8uv1g" alt="North of Quiet" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+          <!-- Premium Ink Badge -->
+          <span class="absolute top-2.5 left-2.5 bg-[#1C0C1F] text-white text-[11px] font-medium px-2 py-0.5 rounded-full shadow-sm tracking-wide">
+            Premium
+          </span>
+        </div>
+        <div class="mt-2.5 flex flex-col">
+          <div class="flex items-start justify-between gap-1">
+            <h2 class="text-[14px] font-semibold text-[#1C0C1F] leading-snug line-clamp-1">
+              North of Quiet
+            </h2>
+            <!-- Book Icon (Ebook) -->
+            <svg class="w-3.5 h-3.5 mt-0.5 text-[#76687A] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-0.05"/>
+              <path d="M6 2v20"/>
+            </svg>
+          </div>
+          <span class="text-[12px] text-[#574A5A] leading-tight mt-0.5">Mara Ellis</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pinned Bottom Tab Bar (Fixed to 393px container width) -->
+    <!-- Exactly 5 tabs in order: Today, Library, Search, Saved, Profile -->
+    <!-- Library active: #A337BA with #F6E4FA pill behind icon. Others #574A5A -->
+    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[393px] bg-white border-t border-[#EADCEE] px-4 pt-2 pb-6 z-30 flex items-center justify-between">
+      
+      <!-- Tab 1: Today -->
+      <button class="flex flex-col items-center justify-center flex-1 py-1 text-[#574A5A] hover:text-[#1C0C1F] transition-colors group">
+        <div class="w-8 h-7 flex items-center justify-center rounded-full mb-1">
+          <!-- Sun icon -->
+          <svg class="w-5 h-5 text-[#574A5A] group-hover:text-[#1C0C1F] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/>
+            <path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/>
+            <path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/>
+            <path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+        </div>
+        <span class="text-[11px] font-medium leading-none">Today</span>
+      </button>
+
+      <!-- Tab 2: Library (ACTIVE) -->
+      <button class="flex flex-col items-center justify-center flex-1 py-1 text-[#A337BA]">
+        <div class="w-10 h-7 flex items-center justify-center rounded-full bg-[#F6E4FA] mb-1">
+          <!-- Library / Bookshelf icon -->
+          <svg class="w-5 h-5 text-[#A337BA]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m16 6 4 14"/>
+            <path d="M12 6v14"/>
+            <path d="M8 8v12"/>
+            <path d="M4 4v16"/>
+          </svg>
+        </div>
+        <span class="text-[11px] font-semibold leading-none text-[#A337BA]">Library</span>
+      </button>
+
+      <!-- Tab 3: Search -->
+      <button class="flex flex-col items-center justify-center flex-1 py-1 text-[#574A5A] hover:text-[#1C0C1F] transition-colors group">
+        <div class="w-8 h-7 flex items-center justify-center rounded-full mb-1">
+          <!-- Search icon -->
+          <svg class="w-5 h-5 text-[#574A5A] group-hover:text-[#1C0C1F] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+        </div>
+        <span class="text-[11px] font-medium leading-none">Search</span>
+      </button>
+
+      <!-- Tab 4: Saved -->
+      <button class="flex flex-col items-center justify-center flex-1 py-1 text-[#574A5A] hover:text-[#1C0C1F] transition-colors group">
+        <div class="w-8 h-7 flex items-center justify-center rounded-full mb-1">
+          <!-- Bookmark icon -->
+          <svg class="w-5 h-5 text-[#574A5A] group-hover:text-[#1C0C1F] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>
+          </svg>
+        </div>
+        <span class="text-[11px] font-medium leading-none">Saved</span>
+      </button>
+
+      <!-- Tab 5: Profile -->
+      <button class="flex flex-col items-center justify-center flex-1 py-1 text-[#574A5A] hover:text-[#1C0C1F] transition-colors group">
+        <div class="w-8 h-7 flex items-center justify-center rounded-full mb-1">
+          <!-- User icon -->
+          <svg class="w-5 h-5 text-[#574A5A] group-hover:text-[#1C0C1F] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="5"/>
+            <path d="M20 21a8 8 0 1 0-16 0"/>
+          </svg>
+        </div>
+        <span class="text-[11px] font-medium leading-none">Profile</span>
+      </button>
+
+    </div>
+
+  </div>
+</body>
+</html>

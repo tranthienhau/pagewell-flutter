@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pagewell - Sign in</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Fraunces & Outfit -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#211922",
+            "text-primary": "#1C0C1F",
+            "on-surface-variant": "#514251",
+            "on-secondary-fixed": "#350041",
+            "inverse-on-surface": "#fcecf9",
+            "accent-fill-pressed": "#9B3BAF",
+            "secondary": "#972aae",
+            "primary-fixed": "#fed6ff",
+            "surface": "#FFFFFF",
+            "primary-container": "#b63bd1",
+            "surface-tint": "#9c1ab8",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "surface-container-low": "#ffeffb",
+            "on-primary-fixed": "#350041",
+            "on-tertiary-fixed-variant": "#504700",
+            "on-primary-container": "#fffbff",
+            "control-border": "#B085B4",
+            "surface-bright": "#fff7fa",
+            "text-tertiary": "#76687A",
+            "secondary-fixed-dim": "#f6adff",
+            "inverse-primary": "#f6adff",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#dac84e",
+            "outline-variant": "#d5c0d3",
+            "outline": "#837282",
+            "surface-container": "#f9e9f6",
+            "danger-bg": "#FBE5E5",
+            "on-tertiary": "#ffffff",
+            "on-background": "#211922",
+            "surface-dim": "#e5d5e2",
+            "success-bg": "#E3F4E9",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "accent-tint": "#F6E4FA",
+            "text-secondary": "#574A5A",
+            "on-primary-fixed-variant": "#7a0093",
+            "tertiary-container": "#bdac34",
+            "secondary-fixed": "#fed6ff",
+            "primary": "#A337BA",
+            "background": "#FAF4FC",
+            "warning-text": "#A75906",
+            "surface-container-highest": "#eedeeb",
+            "on-tertiary-fixed": "#201c00",
+            "secondary-container": "#e979fd",
+            "danger-text": "#CE2020",
+            "surface-alt": "#F3E8F6",
+            "support": "#A8D672",
+            "surface-variant": "#eedeeb",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#68007d",
+            "warning-bg": "#FAEFE1",
+            "success-text": "#0E7C3A",
+            "on-tertiary-container": "#484000",
+            "surface-container-high": "#f4e4f0",
+            "primary-fixed-dim": "#f6adff",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#f7e467",
+            "support-strong": "#6EA22E",
+            "hairline-divider": "#EADCEE",
+            "on-secondary-fixed-variant": "#7a0093",
+            "tertiary": "#6a5f00",
+            "inverse-surface": "#372d37"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-xl": "24px",
+            "space-sm": "8px",
+            "space-lg": "16px",
+            "gutter": "16px",
+            "space-md": "12px",
+            "space-2xl": "32px",
+            "margin": "20px"
+          },
+          "fontFamily": {
+            "label": ["Outfit", "sans-serif"],
+            "title": ["Outfit", "sans-serif"],
+            "reader-body": ["Fraunces", "serif"],
+            "body": ["Outfit", "sans-serif"],
+            "legal": ["Outfit", "sans-serif"],
+            "display": ["Fraunces", "serif"],
+            "caption": ["Outfit", "sans-serif"],
+            "headline": ["Fraunces", "serif"]
+          },
+          "fontSize": {
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "reader-body": ["18px", { "lineHeight": "28.8px", "fontWeight": "400" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "legal": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "headline": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+          },
+          "boxShadow": {
+            "subtle": "0 1px 2px rgba(28,12,31,0.04), 0 8px 24px rgba(28,12,31,0.06)",
+            "button": "0 4px 14px rgba(163, 55, 186, 0.28)",
+            "avatar": "0 4px 16px rgba(28,12,31,0.08)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Smooth focus rings and native reset */
+    input:focus {
+      outline: none;
+      border-color: #A337BA !important;
+      box-shadow: 0 0 0 2px rgba(163, 55, 186, 0.2) !important;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased min-h-full flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Device Container (393px width reference) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background flex flex-col justify-between px-margin pt-[59px] pb-[34px] relative">
+<!-- Top Bar / Action Bar -->
+<header class="flex justify-between items-center w-full mb-space-lg">
+<button aria-label="Go back" class="w-10 h-10 -ml-1 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt active:opacity-80 transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<span class="font-headline text-headline text-text-primary select-none font-semibold tracking-tight">
+        Pagewell
+      </span>
+<button class="font-label text-label text-text-secondary hover:text-primary transition-colors py-1.5 px-2 active:opacity-80" type="button">
+        Help
+      </button>
+</header>
+<!-- Content Card / Form Body -->
+<div class="flex-1 flex flex-col justify-start">
+<!-- Editorial Header Section -->
+<section class="flex flex-col items-start mt-space-sm mb-space-xl">
+<!-- Accent Photography Hero Pill -->
+<div class="relative mb-space-lg">
+<div class="w-[68px] h-[68px] rounded-full overflow-hidden p-0.5 bg-surface shadow-avatar ring-1 ring-hairline-divider">
+<img alt="An open paperback novel lying quietly on a soft textured linen sheet beside a speckled ceramic teacup" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAryngxBXzZVTHKsE-meaSTNdo4AgV3j1zWpZdouJoYgYkyadTZiaSwEeIGhSsvlcETIQMPaFjErHojEeRBAEoIXBZCYsJLktAGiNq8BUfsgIAt-sZinufUUIt2e9pWuV0gmKmaOoowtt5qA9x-k1Injjb8JmZXVraggMPG7ZrSNYGqte7281arfstZmSZ7nMy3-k2Fw-hvqJGYeMgsrhtFOJL_wYndSFFYhZBn1AWeuIEJmPAutpD2TUxttXBRsXyso3Dh9IcLbDc"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-accent-tint border border-surface flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+</div>
+<!-- Typography Headline & Descriptor -->
+<h1 class="font-display text-display text-text-primary leading-tight tracking-[-0.02em] mb-space-xs">
+          Welcome back
+        </h1>
+<p class="font-body text-[15px] leading-relaxed text-text-secondary">
+          Sign in to sync your library, bookmarks and membership
+        </p>
+</section>
+<!-- Sign In Form -->
+<form class="space-y-space-lg" onsubmit="event.preventDefault();">
+<!-- Email Input -->
+<div class="space-y-1.5">
+<label class="block font-label text-label text-text-secondary font-medium" for="email">
+            Email
+          </label>
+<div class="relative">
+<input autocomplete="email" class="w-full h-[52px] px-space-lg bg-surface text-text-primary font-body text-body rounded-[12px] border border-control-border placeholder-text-tertiary transition-all" id="email" name="email" placeholder="Enter your email" required="" type="email" value="ava.morgan@mail.com"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-1.5">
+<label class="block font-label text-label text-text-secondary font-medium" for="password">
+            Password
+          </label>
+<div class="relative">
+<input autocomplete="current-password" class="w-full h-[52px] pl-space-lg pr-12 bg-surface text-text-primary font-body text-body rounded-[12px] border border-control-border placeholder-text-tertiary transition-all tracking-widest" id="password" name="password" placeholder="••••••••••••" required="" type="password" value="secretpassword123"/>
+<button aria-label="Toggle password visibility" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-text-secondary hover:text-text-primary p-1 rounded-full transition-colors flex items-center justify-center active:opacity-70" id="toggle-password" type="button">
+<span class="material-symbols-outlined text-[20px]" id="eye-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Forgot Password Action -->
+<div class="flex justify-end pt-0.5">
+<a class="font-label text-caption text-primary hover:text-accent-fill-pressed transition-colors font-medium active:opacity-80" href="#">
+            Forgot password?
+          </a>
+</div>
+<!-- Primary CTA Button -->
+<div class="pt-space-sm">
+<button class="w-full h-[56px] rounded-full bg-primary hover:bg-accent-fill-pressed active:bg-accent-fill-pressed text-on-primary font-label text-label font-medium shadow-button transition-all duration-150 flex items-center justify-center active:scale-[0.99]" type="submit">
+            Sign in
+          </button>
+</div>
+</form>
+<!-- Separation Hairline Divider -->
+<div class="relative my-space-xl flex items-center justify-center">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-hairline-divider"></div>
+</div>
+<div class="relative px-space-md bg-background">
+<span class="font-label text-caption text-text-tertiary font-normal">or</span>
+</div>
+</div>
+<!-- Secondary Guest CTA -->
+<button class="w-full h-[56px] rounded-full bg-surface hover:bg-surface-alt border-[1.5px] border-control-border text-text-primary font-label text-label font-medium transition-all duration-150 flex items-center justify-center active:scale-[0.99] active:opacity-90 shadow-sm" type="button">
+        Continue as guest
+      </button>
+</div>
+<!-- Bottom Footer Anchor -->
+<footer class="pt-space-xl pb-space-xs text-center">
+<p class="font-body text-body text-text-secondary">
+        New here? 
+        <a class="font-body text-body font-semibold text-primary hover:text-accent-fill-pressed transition-colors active:opacity-80 ml-1 inline-block" href="#">
+          Create account
+        </a>
+</p>
+</footer>
+</main>
+<!-- Interactive behavior for password toggle -->
+<script>
+    const toggleBtn = document.getElementById('toggle-password');
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('eye-icon');
+
+    if (toggleBtn && passwordInput && eyeIcon) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        eyeIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+        
+        if (!isPassword) {
+          passwordInput.classList.add('tracking-widest');
+        } else {
+          passwordInput.classList.remove('tracking-widest');
+        }
+      });
+    }
+  </script>
+</body></html>

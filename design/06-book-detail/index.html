@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Salt Road - Pagewell</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "warning-bg": "#FAEFE1",
+            "warning-text": "#A75906",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#211922",
+            "text-tertiary": "#76687A",
+            "on-secondary-fixed-variant": "#7a0093",
+            "surface-tint": "#9c1ab8",
+            "tertiary-fixed": "#f7e467",
+            "surface-dim": "#e5d5e2",
+            "secondary-fixed": "#fed6ff",
+            "inverse-on-surface": "#fcecf9",
+            "success-text": "#0E7C3A",
+            "inverse-primary": "#f6adff",
+            "on-secondary-fixed": "#350041",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#504700",
+            "surface-variant": "#eedeeb",
+            "secondary-fixed-dim": "#f6adff",
+            "outline": "#837282",
+            "on-secondary": "#ffffff",
+            "danger-bg": "#FBE5E5",
+            "primary-fixed-dim": "#f6adff",
+            "tertiary": "#6a5f00",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#f4e4f0",
+            "surface-alt": "#F3E8F6",
+            "danger-text": "#CE2020",
+            "tertiary-fixed-dim": "#dac84e",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#201c00",
+            "on-tertiary-container": "#484000",
+            "error": "#ba1a1a",
+            "hairline-divider": "#EADCEE",
+            "text-primary": "#1C0C1F",
+            "on-primary-fixed": "#350041",
+            "surface-bright": "#fff7fa",
+            "on-secondary-container": "#68007d",
+            "support": "#A8D672",
+            "success-bg": "#E3F4E9",
+            "surface-container-highest": "#eedeeb",
+            "background": "#FAF4FC",
+            "surface": "#FFFFFF",
+            "support-strong": "#6EA22E",
+            "tertiary-container": "#bdac34",
+            "primary-container": "#b63bd1",
+            "primary": "#9915b5",
+            "on-primary-fixed-variant": "#7a0093",
+            "on-primary-container": "#fffbff",
+            "on-background": "#211922",
+            "outline-variant": "#d5c0d3",
+            "on-surface-variant": "#514251",
+            "secondary-container": "#e979fd",
+            "primary-fixed": "#fed6ff",
+            "accent-tint": "#F6E4FA",
+            "text-secondary": "#574A5A",
+            "on-error": "#ffffff",
+            "inverse-surface": "#372d37",
+            "accent-fill-pressed": "#9B3BAF",
+            "surface-container-low": "#ffeffb",
+            "secondary": "#972aae",
+            "control-border": "#B085B4",
+            "surface-container": "#f9e9f6",
+            "error-container": "#ffdad6",
+            "accent": "#C64BE0",
+            "accent-fill": "#A337BA"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "12px",
+            "space-sm": "8px",
+            "margin": "20px",
+            "gutter": "16px",
+            "space-xl": "24px",
+            "space-lg": "16px",
+            "space-2xl": "32px",
+            "space-xs": "4px"
+          },
+          "fontFamily": {
+            "caption": ["Outfit"],
+            "legal": ["Outfit"],
+            "body": ["Outfit"],
+            "label": ["Outfit"],
+            "display": ["Fraunces"],
+            "headline": ["Fraunces"],
+            "title": ["Outfit"],
+            "reader-body": ["Fraunces"]
+          },
+          "fontSize": {
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "legal": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "reader-body": ["18px", { "lineHeight": "28.8px", "fontWeight": "400" }]
+          },
+          "boxShadow": {
+            "card-soft": "0 1px 2px rgba(28,12,31,0.04), 0 8px 24px rgba(28,12,31,0.06)",
+            "cover-soft": "0 8px 24px rgba(28,12,31,0.08)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased font-body min-h-screen flex justify-center">
+<!-- Mobile Container 393px frame -->
+<main class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-space-2xl overflow-x-hidden">
+<!-- Safe Area Top Spacer (~59px) -->
+<div class="w-full h-[54px] shrink-0"></div>
+<!-- Navigation Bar: Back Arrow Left, Heart & Share Right -->
+<header class="w-full px-margin py-space-sm flex items-center justify-between z-10">
+<button aria-label="Go back" class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary active:opacity-70 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Add to favourites" class="w-10 h-10 rounded-full flex items-center justify-center text-accent active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<button aria-label="Share book" class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary active:opacity-70 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[24px]">share</span>
+</button>
+</div>
+</header>
+<!-- Content Flow -->
+<div class="flex-1 flex flex-col px-margin pt-space-xs">
+<!-- Focal Element: Centered Photographic Book Cover -->
+<div class="flex justify-center items-center pt-space-sm pb-space-xl">
+<div class="w-[200px] aspect-[2/3] rounded-[12px] overflow-hidden shadow-cover-soft bg-surface border border-hairline-divider flex-shrink-0 transition-transform active:scale-[0.99]">
+<img alt="The Salt Road cover" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrBWzMqMA04Pas6ffDIKbqjomX6zlPOfmXhw3QGGEHFEvnkDWLohAtkiUFvepSvjxrABCkuFTCr_pZcgIMqwrCoMBvSHujNJsxivuswxwFaMfcrPHMkubGQbOySSWVOrH3NtgBSu0w-fS3S6gemDM4eomOshivfSDFR4pTrcisj1HcNXCwqt8Bz9FRvug2ppikwFNW8wf3Fx215Fp-gxMfcpyIQIWPbkNf7rsIZPijHRl5uaOwwmEN2FFlQ"/>
+</div>
+</div>
+<!-- Book Header & Metadata Info -->
+<div class="flex flex-col items-center text-center">
+<h1 class="font-display text-display text-text-primary tracking-[-0.02em] font-bold">
+          The Salt Road
+        </h1>
+<p class="font-title text-[16px] leading-[24px] font-semibold text-accent-fill mt-space-xs">
+          Imogen Hale
+        </p>
+<!-- Rating Row -->
+<div class="flex items-center justify-center gap-1.5 mt-space-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label text-label text-text-secondary font-medium">
+            4.6 <span class="text-text-tertiary font-normal">(2,140)</span>
+</span>
+</div>
+<!-- Metadata Chips Row -->
+<div class="flex items-center justify-center flex-wrap gap-2 mt-space-lg">
+<span class="inline-flex items-center h-[32px] px-3.5 rounded-full bg-accent-tint text-accent-fill font-caption text-caption font-medium">
+            Ebook + Audio
+          </span>
+<span class="inline-flex items-center h-[32px] px-3.5 rounded-full bg-accent-tint text-accent-fill font-caption text-caption font-medium">
+            312 pages
+          </span>
+<span class="inline-flex items-center h-[32px] px-3.5 rounded-full bg-accent-tint text-accent-fill font-caption text-caption font-medium">
+            9h 40m
+          </span>
+</div>
+</div>
+<!-- CTA Action Buttons -->
+<div class="grid grid-cols-2 gap-3 mt-space-xl">
+<!-- Primary Action -->
+<button class="h-[56px] rounded-full bg-accent-fill text-on-primary font-label text-label font-medium flex items-center justify-center gap-2 active:bg-accent-fill-pressed transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Read</span>
+</button>
+<!-- Secondary Action -->
+<button class="h-[56px] rounded-full bg-surface border-[1.5px] border-control-border text-text-primary font-label text-label font-medium flex items-center justify-center gap-2 active:bg-surface-alt transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] text-text-primary">headphones</span>
+<span>Listen</span>
+</button>
+</div>
+<!-- Divider -->
+<div class="h-[1px] bg-hairline-divider my-space-xl"></div>
+<!-- Section: About this book -->
+<section class="flex flex-col">
+<h2 class="font-title text-title text-text-primary font-semibold mb-space-sm">
+          About this book
+        </h2>
+<p class="font-body text-[15px] leading-[24px] text-text-secondary">
+          A salt trader's daughter crosses the flats with the last caravan of the season, carrying a letter that could end a feud between two towns.
+        </p>
+</section>
+<!-- Divider -->
+<div class="h-[1px] bg-hairline-divider my-space-xl"></div>
+<!-- Section: Chapters -->
+<section class="flex flex-col pb-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<h2 class="font-title text-title text-text-primary font-semibold">
+            Chapters
+          </h2>
+<span class="font-caption text-caption text-text-tertiary">
+            12 total
+          </span>
+</div>
+<!-- Chapters List / Grouped Rows Container -->
+<div class="bg-surface rounded-card p-space-sm border border-hairline-divider shadow-card-soft flex flex-col">
+<!-- Chapter 1 -->
+<div class="flex items-center justify-between py-space-md px-space-sm hover:bg-surface-alt rounded-[12px] transition-colors cursor-pointer group">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill font-title text-[14px] font-semibold">
+                1
+              </div>
+<div class="flex flex-col">
+<span class="font-title text-[15px] text-text-primary font-semibold group-hover:text-accent-fill transition-colors">The Well</span>
+<span class="font-caption text-caption text-text-tertiary">Introduction</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-caption text-caption text-text-secondary font-medium">38 min</span>
+<div class="w-8 h-8 rounded-full flex items-center justify-center text-accent-fill active:bg-accent-tint">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="h-[1px] bg-hairline-divider mx-space-sm"></div>
+<!-- Chapter 2 -->
+<div class="flex items-center justify-between py-space-md px-space-sm hover:bg-surface-alt rounded-[12px] transition-colors cursor-pointer group">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill font-title text-[14px] font-semibold">
+                2
+              </div>
+<div class="flex flex-col">
+<span class="font-title text-[15px] text-text-primary font-semibold group-hover:text-accent-fill transition-colors">Salt and Dust</span>
+<span class="font-caption text-caption text-text-tertiary">Part I</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-caption text-caption text-text-secondary font-medium">41 min</span>
+<div class="w-8 h-8 rounded-full flex items-center justify-center text-accent-fill active:bg-accent-tint">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="h-[1px] bg-hairline-divider mx-space-sm"></div>
+<!-- Chapter 3 -->
+<div class="flex items-center justify-between py-space-md px-space-sm hover:bg-surface-alt rounded-[12px] transition-colors cursor-pointer group">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill font-title text-[14px] font-semibold">
+                3
+              </div>
+<div class="flex flex-col">
+<span class="font-title text-[15px] text-text-primary font-semibold group-hover:text-accent-fill transition-colors">Night Market</span>
+<span class="font-caption text-caption text-text-tertiary">Part I</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-caption text-caption text-text-secondary font-medium">36 min</span>
+<div class="w-8 h-8 rounded-full flex items-center justify-center text-accent-fill active:bg-accent-tint">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Home Indicator Safe Area (~34px) -->
+<div class="w-full h-[34px] shrink-0 flex items-center justify-center">
+<div class="w-32 h-1 bg-text-primary/10 rounded-full"></div>
+</div>
+</main>
+</body></html>

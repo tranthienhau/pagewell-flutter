@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=393, initial-scale=1.0" name="viewport"/>
+<title>Profile - Pagewell</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Script -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "warning-bg": "#FAEFE1",
+            "surface-alt": "#F3E8F6",
+            "on-background": "#211922",
+            "on-surface": "#211922",
+            "tertiary-fixed": "#f7e467",
+            "surface-tint": "#9c1ab8",
+            "primary-fixed": "#fed6ff",
+            "on-secondary-container": "#68007d",
+            "on-secondary-fixed-variant": "#7a0093",
+            "on-tertiary-fixed-variant": "#504700",
+            "on-primary-fixed-variant": "#7a0093",
+            "tertiary-container": "#bdac34",
+            "surface-container-highest": "#eedeeb",
+            "primary": "#9915b5",
+            "secondary-fixed-dim": "#f6adff",
+            "secondary": "#972aae",
+            "text-tertiary": "#76687A",
+            "error-container": "#ffdad6",
+            "tertiary": "#6a5f00",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-primary-container": "#fffbff",
+            "surface-dim": "#e5d5e2",
+            "inverse-surface": "#372d37",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#201c00",
+            "inverse-on-surface": "#fcecf9",
+            "surface-container-low": "#ffeffb",
+            "on-tertiary-container": "#484000",
+            "success-bg": "#E3F4E9",
+            "on-error-container": "#93000a",
+            "control-border": "#B085B4",
+            "danger-text": "#CE2020",
+            "surface-variant": "#eedeeb",
+            "surface-bright": "#fff7fa",
+            "primary-fixed-dim": "#f6adff",
+            "accent-fill-pressed": "#9B3BAF",
+            "hairline-divider": "#EADCEE",
+            "text-primary": "#1C0C1F",
+            "success-text": "#0E7C3A",
+            "primary-container": "#b63bd1",
+            "on-surface-variant": "#514251",
+            "tertiary-fixed-dim": "#dac84e",
+            "support-strong": "#6EA22E",
+            "on-primary-fixed": "#350041",
+            "warning-text": "#A75906",
+            "background": "#FAF4FC",
+            "surface": "#FFFFFF",
+            "accent-tint": "#F6E4FA",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#fed6ff",
+            "on-secondary-fixed": "#350041",
+            "text-secondary": "#574A5A",
+            "surface-container-high": "#f4e4f0",
+            "on-secondary": "#ffffff",
+            "surface-container": "#f9e9f6",
+            "danger-bg": "#FBE5E5",
+            "outline-variant": "#d5c0d3",
+            "inverse-primary": "#f6adff",
+            "outline": "#837282",
+            "secondary-container": "#e979fd",
+            "support": "#A8D672",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "16px",
+            "space-xl": "24px",
+            "space-sm": "8px",
+            "space-md": "12px",
+            "margin": "20px",
+            "space-xs": "4px",
+            "gutter": "16px",
+            "space-2xl": "32px"
+          },
+          "fontFamily": {
+            "title": ["Outfit"],
+            "display": ["Fraunces"],
+            "reader-body": ["Fraunces"],
+            "legal": ["Outfit"],
+            "headline": ["Fraunces"],
+            "body": ["Outfit"],
+            "label": ["Outfit"],
+            "caption": ["Outfit"]
+          },
+          "fontSize": {
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "reader-body": ["18px", { "lineHeight": "28.8px", "fontWeight": "400" }],
+            "legal": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+          },
+          "boxShadow": {
+            "ambient": "0 1px 2px rgba(28,12,31,0.04), 0 8px 24px rgba(28,12,31,0.06)",
+            "nav": "0 -1px 3px rgba(28,12,31,0.04)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #FAF4FC;
+      color: #1C0C1F;
+      font-family: 'Outfit', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+  </style>
+</head>
+<body class="bg-background min-h-screen flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Container (393px viewport) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-32">
+<!-- Top App Bar (Shared Component Anchor) -->
+<header class="flex justify-between items-center w-full px-margin pt-12 pb-space-md max-w-[393px] mx-auto bg-background transition-colors">
+<button aria-label="Go back" class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-display text-display text-text-primary tracking-tight">Profile</h1>
+<button aria-label="Settings" class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<div class="px-margin flex flex-col gap-space-xl mt-space-sm">
+<!-- Account Row -->
+<section class="flex items-center justify-between p-2">
+<div class="flex items-center gap-space-lg">
+<div class="relative w-16 h-16 rounded-full overflow-hidden shadow-ambient ring-2 ring-white">
+<img alt="Ava Morgan" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsTJ9lUFSAI0Qzzp6uKBeUnyxuLOsrGXx0bb7w91R8wVbFa23qodZPpSO675UbUXeiXWi0lgJbY3krTWNFP2m12uHkr2XER4L_9qyKbtRxCxGGvrxgLV2GSj2QZTv4ZPS7lM9s7RmNAcVIWg5pSwyF4XjJatB2DUgaar7h949ZMhEgWbVpZvTs6Arf75wdW8To0PO27HBSTnWQOVd0IBJHuIdUk1Vn9ROXnz1cu25dlM9l0Ht7EmFEZbwaUOMACZ07IYJk_lJKD9M"/>
+</div>
+<div class="flex flex-col">
+<span class="font-title text-title text-text-primary tracking-tight">Ava Morgan</span>
+<span class="font-caption text-caption text-text-secondary">ava.morgan@mail.com</span>
+</div>
+</div>
+<button aria-label="Edit Profile" class="w-9 h-9 rounded-full flex items-center justify-center text-text-tertiary hover:bg-surface-alt transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</section>
+<!-- Focal Membership Card -->
+<section class="relative bg-surface rounded-[20px] shadow-ambient overflow-hidden flex">
+<!-- Accent stripe on the left edge -->
+<div class="w-[5px] shrink-0 bg-gradient-to-b from-[#C64BE0] to-support rounded-l-[20px]"></div>
+<div class="p-space-lg flex-1 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-title text-[18px] leading-[26px] font-semibold text-text-primary">Free plan</h2>
+<button class="bg-[#A337BA] hover:bg-accent-fill-pressed active:scale-95 transition-all text-white font-label text-caption px-4 py-1.5 rounded-full font-medium shadow-sm" type="button">
+              Upgrade
+            </button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center text-text-secondary font-caption text-caption">
+<span>2 of 3 books used this month</span>
+</div>
+<!-- Orchid Progress Bar (66%) -->
+<div class="w-full h-[6px] bg-surface-alt rounded-full overflow-hidden mt-1">
+<div class="h-full bg-[#C64BE0] rounded-full w-[66%] transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Row (Three Horizontal Tiles) -->
+<section class="grid grid-cols-3 gap-3">
+<!-- Tile 1 -->
+<div class="bg-surface rounded-[16px] p-3.5 text-center shadow-ambient flex flex-col items-center justify-center">
+<span class="font-display text-[26px] leading-[32px] font-bold text-[#A337BA]">14</span>
+<span class="font-caption text-caption text-text-secondary mt-1">Books read</span>
+</div>
+<!-- Tile 2 -->
+<div class="bg-surface rounded-[16px] p-3.5 text-center shadow-ambient flex flex-col items-center justify-center">
+<span class="font-display text-[26px] leading-[32px] font-bold text-[#A337BA]">36h</span>
+<span class="font-caption text-caption text-text-secondary mt-1">Listened</span>
+</div>
+<!-- Tile 3 -->
+<div class="bg-surface rounded-[16px] p-3.5 text-center shadow-ambient flex flex-col items-center justify-center">
+<span class="font-display text-[26px] leading-[32px] font-bold text-[#A337BA]">21</span>
+<span class="font-caption text-caption text-text-secondary mt-1">Day streak</span>
+</div>
+</section>
+<!-- Settings List in Grouped Card -->
+<section class="bg-surface rounded-[20px] shadow-ambient overflow-hidden flex flex-col divide-y divide-hairline-divider">
+<!-- Row 1: Downloads -->
+<a class="flex items-center justify-between px-space-lg py-4 hover:bg-surface-alt/60 transition-colors active:bg-surface-alt" href="#downloads">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">download</span>
+<span class="font-body text-body text-text-primary font-normal">Downloads</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-text-tertiary">chevron_right</span>
+</a>
+<!-- Row 2: Reading preferences -->
+<a class="flex items-center justify-between px-space-lg py-4 hover:bg-surface-alt/60 transition-colors active:bg-surface-alt" href="#preferences">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">menu_book</span>
+<span class="font-body text-body text-text-primary font-normal">Reading preferences</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-text-tertiary">chevron_right</span>
+</a>
+<!-- Row 3: Notifications -->
+<a class="flex items-center justify-between px-space-lg py-4 hover:bg-surface-alt/60 transition-colors active:bg-surface-alt" href="#notifications">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">notifications</span>
+<span class="font-body text-body text-text-primary font-normal">Notifications</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-text-tertiary">chevron_right</span>
+</a>
+<!-- Row 4: Editor studio -->
+<a class="flex items-center justify-between px-space-lg py-4 hover:bg-surface-alt/60 transition-colors active:bg-surface-alt" href="#editor-studio">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">palette</span>
+<span class="font-body text-body text-text-primary font-normal">Editor studio</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-text-tertiary">chevron_right</span>
+</a>
+<!-- Row 5: Sign out -->
+<button class="w-full flex items-center px-space-lg py-4 hover:bg-danger-bg/50 transition-colors text-left active:bg-danger-bg" type="button">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-danger-text">logout</span>
+<span class="font-body text-body text-danger-text font-medium">Sign out</span>
+</div>
+</button>
+</section>
+</div>
+<!-- Bottom Navigation Bar (Docked Shared Component Anchor) -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 bg-surface border-t border-hairline-divider shadow-[0_-1px_3px_rgba(28,12,31,0.04)]">
+<div class="max-w-[393px] mx-auto flex justify-around items-center px-space-sm pt-2 pb-8">
+<!-- Tab 1: Today -->
+<button class="flex flex-col items-center justify-center text-text-secondary py-1.5 transition-all hover:text-primary active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+<span class="font-label text-caption mt-1">Today</span>
+</button>
+<!-- Tab 2: Library -->
+<button class="flex flex-col items-center justify-center text-text-secondary py-1.5 transition-all hover:text-primary active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">local_library</span>
+<span class="font-label text-caption mt-1">Library</span>
+</button>
+<!-- Tab 3: Search -->
+<button class="flex flex-col items-center justify-center text-text-secondary py-1.5 transition-all hover:text-primary active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">search</span>
+<span class="font-label text-caption mt-1">Search</span>
+</button>
+<!-- Tab 4: Saved -->
+<button class="flex flex-col items-center justify-center text-text-secondary py-1.5 transition-all hover:text-primary active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">bookmark</span>
+<span class="font-label text-caption mt-1">Saved</span>
+</button>
+<!-- Tab 5: Profile (ACTIVE) -->
+<button class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-4 py-1.5 transition-all active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span class="font-label text-caption font-semibold mt-0.5">Profile</span>
+</button>
+</div>
+</nav>
+</main>
+</body></html>

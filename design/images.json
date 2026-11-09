@@ -1,0 +1,184 @@
+[
+ {
+  "name": "hero-reader",
+  "file": "assets/images/hero-reader.jpg",
+  "role": "hero",
+  "screens": [
+   "01-welcome"
+  ],
+  "source": "stitch",
+  "prompt": "Young woman peacefully reading in a sunlit armchair"
+ },
+ {
+  "name": "open-book",
+  "file": "assets/images/open-book.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "02-sign-in"
+  ],
+  "source": "stitch",
+  "prompt": "An open paperback novel lying quietly on a soft textured linen sheet beside a speckled ceramic teacup"
+ },
+ {
+  "name": "avatar-ava",
+  "file": "assets/images/avatar-ava.jpg",
+  "role": "avatar",
+  "screens": [
+   "03-today",
+   "04-library",
+   "05-library-empty",
+   "09-search",
+   "12-saved",
+   "14-profile"
+  ],
+  "source": "stitch",
+  "prompt": "Ava Morgan"
+ },
+ {
+  "name": "lighthouse",
+  "file": "assets/images/lighthouse.jpg",
+  "role": "hero",
+  "screens": [
+   "03-today"
+  ],
+  "source": "stitch",
+  "prompt": "Lonely coastal lighthouse at dawn"
+ },
+ {
+  "name": "cover-salt-road",
+  "file": "assets/images/cover-salt-road.jpg",
+  "role": "cover",
+  "screens": [
+   "03-today",
+   "04-library",
+   "06-book-detail",
+   "10-reference-entry",
+   "11-article",
+   "12-saved"
+  ],
+  "source": "stitch",
+  "prompt": "The Salt Road cover"
+ },
+ {
+  "name": "cover-quiet-hours",
+  "file": "assets/images/cover-quiet-hours.jpg",
+  "role": "cover",
+  "screens": [
+   "03-today",
+   "03-today",
+   "04-library",
+   "08-player",
+   "12-saved",
+   "12-saved"
+  ],
+  "source": "stitch",
+  "prompt": "Quiet Hours cover"
+ },
+ {
+  "name": "cover-tide-keeper",
+  "file": "assets/images/cover-tide-keeper.jpg",
+  "role": "cover",
+  "screens": [
+   "03-today",
+   "04-library",
+   "09-search",
+   "10-reference-entry"
+  ],
+  "source": "stitch",
+  "prompt": "The Tide Keeper book cover"
+ },
+ {
+  "name": "cover-lanterns",
+  "file": "assets/images/cover-lanterns.jpg",
+  "role": "cover",
+  "screens": [
+   "03-today",
+   "04-library"
+  ],
+  "source": "stitch",
+  "prompt": "Lanterns in the Archive book cover"
+ },
+ {
+  "name": "cover-small-rivers",
+  "file": "assets/images/cover-small-rivers.jpg",
+  "role": "cover",
+  "screens": [
+   "03-today",
+   "04-library"
+  ],
+  "source": "stitch",
+  "prompt": "A Field Guide to Small Rivers book cover"
+ },
+ {
+  "name": "cover-north-of-quiet",
+  "file": "assets/images/cover-north-of-quiet.jpg",
+  "role": "cover",
+  "screens": [
+   "03-today",
+   "04-library"
+  ],
+  "source": "stitch",
+  "prompt": "North of Quiet book cover"
+ },
+ {
+  "name": "empty-shelf",
+  "file": "assets/images/empty-shelf.jpg",
+  "role": "illustration",
+  "screens": [
+   "05-library-empty"
+  ],
+  "source": "stitch",
+  "prompt": "Empty light wooden bookshelf with a small green plant in soft daylight"
+ },
+ {
+  "name": "tide-pools",
+  "file": "assets/images/tide-pools.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "09-search"
+  ],
+  "source": "stitch",
+  "prompt": "Reading the tide tables photography"
+ },
+ {
+  "name": "rock-pool",
+  "file": "assets/images/rock-pool.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "10-reference-entry"
+  ],
+  "source": "stitch",
+  "prompt": "Coastal rock pool at low tide"
+ },
+ {
+  "name": "lighthouse-article",
+  "file": "assets/images/lighthouse-article.jpg",
+  "role": "hero",
+  "screens": [
+   "11-article",
+   "12-saved"
+  ],
+  "source": "stitch",
+  "prompt": "Atmospheric editorial photograph of a coastal lighthouse at dawn"
+ },
+ {
+  "name": "avatar-clara",
+  "file": "assets/images/avatar-clara.jpg",
+  "role": "avatar",
+  "screens": [
+   "11-article"
+  ],
+  "source": "stitch",
+  "prompt": "Portrait of Clara Bennett"
+ },
+ {
+  "name": "microphone",
+  "file": "assets/images/microphone.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "15-editor-studio"
+  ],
+  "source": "stitch",
+  "prompt": "Studio recording microphone"
+ }
+]
