@@ -106,6 +106,22 @@ final articles = <Article>[
     ],
   ),
   Article(
+    id: 'narration',
+    title: 'The quiet craft of audiobook narration',
+    author: 'Clara Bennett',
+    authorPhoto: '$img/avatar-clara.jpg',
+    image: '$img/microphone.jpg',
+    date: DateTime(2026, 11, 10),
+    minutes: 5,
+    mentionedBookId: 'quiet-hours',
+    pullQuote: 'The best narrators disappear, and leave the story in the room.',
+    paragraphs: const [
+      'A good narrator reads a book three times before the microphone is switched on: once for the story, once for the voices, once for the breath.',
+      'In the booth, pace matters more than polish. Listeners forgive a soft consonant; they do not forgive a rushed sentence.',
+      'The best performances sound effortless because every pause was planned, and then let go.',
+    ],
+  ),
+  Article(
     id: 'tide-tables',
     title: 'Reading the tide tables',
     author: 'Clara Bennett',
