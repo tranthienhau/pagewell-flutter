@@ -27,16 +27,16 @@ class StreamState {
   bool get buffering => playing && buffered - position < const Duration(seconds: 2);
 
   StreamState copyWith({int? chapterIndex, Duration? position, Duration? duration, Duration? buffered, bool? playing, double? speed, Duration? sleepLeft, bool clearSleep = false}) => StreamState(
-        bookId: bookId,
-        chapterIndex: chapterIndex ?? this.chapterIndex,
-        position: position ?? this.position,
-        duration: duration ?? this.duration,
-        buffered: buffered ?? this.buffered,
-        playing: playing ?? this.playing,
-        speed: speed ?? this.speed,
-        sleepLeft: clearSleep ? null : (sleepLeft ?? this.sleepLeft),
-        bitrateKbps: bitrateKbps,
-      );
+    bookId: bookId,
+    chapterIndex: chapterIndex ?? this.chapterIndex,
+    position: position ?? this.position,
+    duration: duration ?? this.duration,
+    buffered: buffered ?? this.buffered,
+    playing: playing ?? this.playing,
+    speed: speed ?? this.speed,
+    sleepLeft: clearSleep ? null : (sleepLeft ?? this.sleepLeft),
+    bitrateKbps: bitrateKbps,
+  );
 
   /// One engine tick of [wall] real time.
   StreamState tick(Duration wall) {

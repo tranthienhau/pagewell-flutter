@@ -21,11 +21,19 @@ abstract final class Nav {
   static void studio(BuildContext c) => _push(c, const StudioScreen());
   static void player(BuildContext c) => _push(c, const PlayerScreen());
 
-  static void reference(BuildContext c, WidgetRef ref, String id) =>
-      openGated(c, ref, premium: refById(id).premium, page: (_) => ReferenceScreen(id: id, openBook: book));
+  static void reference(BuildContext c, WidgetRef ref, String id) => openGated(
+    c,
+    ref,
+    premium: refById(id).premium,
+    page: (_) => ReferenceScreen(id: id, openBook: book),
+  );
 
-  static void read(BuildContext c, WidgetRef ref, String bookId) =>
-      openGated(c, ref, premium: bookById(bookId).premium, page: (_) => ReaderScreen(bookId: bookId));
+  static void read(BuildContext c, WidgetRef ref, String bookId) => openGated(
+    c,
+    ref,
+    premium: bookById(bookId).premium,
+    page: (_) => ReaderScreen(bookId: bookId),
+  );
 
   static void listen(BuildContext c, WidgetRef ref, String bookId, {int chapter = 0}) {
     if (!ref.read(canOpenProvider(bookById(bookId).premium))) return membership(c);

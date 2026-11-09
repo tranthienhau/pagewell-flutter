@@ -34,20 +34,14 @@ abstract final class T {
   static const caption = TextStyle(fontFamily: 'Outfit', fontSize: 13, fontWeight: FontWeight.w500, height: 1.4, color: C.text2);
 }
 
-const shadowCard = [
-  BoxShadow(color: Color(0x0A1C0C1F), blurRadius: 2, offset: Offset(0, 1)),
-  BoxShadow(color: Color(0x0F1C0C1F), blurRadius: 24, offset: Offset(0, 8)),
-];
+const shadowCard = [BoxShadow(color: Color(0x0A1C0C1F), blurRadius: 2, offset: Offset(0, 1)), BoxShadow(color: Color(0x0F1C0C1F), blurRadius: 24, offset: Offset(0, 8))];
 
 ThemeData buildTheme() => ThemeData(
-      useMaterial3: true,
-      fontFamily: 'Outfit',
-      scaffoldBackgroundColor: C.bg,
-      colorScheme: ColorScheme.fromSeed(seedColor: C.accent, primary: C.accentFill, surface: C.surface).copyWith(onSurface: C.ink),
-      splashFactory: InkSparkle.splashFactory,
-      sliderTheme: const SliderThemeData(activeTrackColor: C.accent, inactiveTrackColor: C.surfaceAlt, thumbColor: C.accentFill, trackHeight: 4),
-      pageTransitionsTheme: const PageTransitionsTheme(builders: {
-        TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-      }),
-    );
+  useMaterial3: true,
+  fontFamily: 'Outfit',
+  scaffoldBackgroundColor: C.bg,
+  colorScheme: ColorScheme.fromSeed(seedColor: C.accent, primary: C.accentFill, surface: C.surface).copyWith(onSurface: C.ink),
+  splashFactory: InkSparkle.splashFactory,
+  sliderTheme: const SliderThemeData(activeTrackColor: C.accent, inactiveTrackColor: C.surfaceAlt, thumbColor: C.accentFill, trackHeight: 4),
+  pageTransitionsTheme: const PageTransitionsTheme(builders: {TargetPlatform.android: CupertinoPageTransitionsBuilder(), TargetPlatform.iOS: CupertinoPageTransitionsBuilder()}),
+);

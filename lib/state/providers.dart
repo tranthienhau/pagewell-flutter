@@ -77,17 +77,20 @@ class LibraryState {
 }
 
 class LibraryNotifier extends Notifier<LibraryState> {
-  static const _seed = LibraryState(
-    owned: ['salt-road', 'quiet-hours', 'tide-keeper', 'lanterns', 'small-rivers', 'north-of-quiet'],
-    progress: {'salt-road': .42, 'quiet-hours': .64},
-  );
+  static const _seed = LibraryState(owned: ['salt-road', 'quiet-hours', 'tide-keeper', 'lanterns', 'small-rivers', 'north-of-quiet'], progress: {'salt-road': .42, 'quiet-hours': .64});
 
   @override
   LibraryState build() => _seed;
 
   void restoreFor(String email) => state = _seed; // synced library from the account
   void clear() => state = const LibraryState(owned: [], progress: {});
-  void addFreeTitles() => state = LibraryState(owned: [for (final b in books) if (!b.premium) b.id], progress: state.progress);
+  void addFreeTitles() => state = LibraryState(
+    owned: [
+      for (final b in books)
+        if (!b.premium) b.id,
+    ],
+    progress: state.progress,
+  );
   void setProgress(String id, double p) => state = LibraryState(owned: state.owned.contains(id) ? state.owned : [...state.owned, id], progress: {...state.progress, id: p.clamp(0, 1)});
 }
 
@@ -132,9 +135,23 @@ class BookmarksNotifier extends Notifier<List<Bookmark>> {
   List<Bookmark> build() {
     final now = ref.read(clockProvider);
     return [
-      Bookmark(id: 'b1', kind: BookmarkKind.page, targetId: 'salt-road', label: 'Page 131 - Chapter 2', snippet: 'The caravan left before dawn, when the salt still held the cold of the night.', createdAt: now.subtract(const Duration(hours: 2))),
+      Bookmark(
+        id: 'b1',
+        kind: BookmarkKind.page,
+        targetId: 'salt-road',
+        label: 'Page 131 - Chapter 2',
+        snippet: 'The caravan left before dawn, when the salt still held the cold of the night.',
+        createdAt: now.subtract(const Duration(hours: 2)),
+      ),
       Bookmark(id: 'b2', kind: BookmarkKind.audio, targetId: 'quiet-hours', label: '18:24 - Chapter 7 The Long Field', createdAt: now.subtract(const Duration(days: 1))),
-      Bookmark(id: 'b3', kind: BookmarkKind.reference, targetId: 'tide', label: 'Reference - Nature', snippet: "The regular rise and fall of the sea's surface.", createdAt: now.subtract(const Duration(days: 3))),
+      Bookmark(
+        id: 'b3',
+        kind: BookmarkKind.reference,
+        targetId: 'tide',
+        label: 'Reference - Nature',
+        snippet: "The regular rise and fall of the sea's surface.",
+        createdAt: now.subtract(const Duration(days: 3)),
+      ),
       Bookmark(id: 'b4', kind: BookmarkKind.article, targetId: 'read-by-the-sea', label: 'Daily read - 9 Nov', createdAt: now.subtract(const Duration(minutes: 40))),
     ];
   }
@@ -178,7 +195,13 @@ class PlayerNotifier extends Notifier<StreamState?> {
     final b = bookById(bookId);
     final ch = b.chapters[chapterIndex];
     _setPlaying(false);
-    state = StreamState(bookId: bookId, chapterIndex: chapterIndex, position: Duration.zero, duration: Duration(minutes: ch.minutes), buffered: Duration.zero);
+    state = StreamState(
+      bookId: bookId,
+      chapterIndex: chapterIndex,
+      position: Duration.zero,
+      duration: Duration(minutes: ch.minutes),
+      buffered: Duration.zero,
+    );
   }
 
   void toggle() => _setPlaying(!(state?.playing ?? false));
@@ -252,12 +275,7 @@ final searchQueryProvider = NotifierProvider<SearchQueryNotifier, SearchQuery>(S
 
 final searchIndexProvider = Provider<SearchIndex>((ref) {
   final salt = ref.watch(epubProvider('assets/books/the-salt-road.epub')).value;
-  return SearchIndex(
-    books: books,
-    articles: articles,
-    reference: refEntries,
-    bookText: {if (salt != null) 'salt-road': salt.chapters.expand((c) => c.paragraphs).join(' ')},
-  );
+  return SearchIndex(books: books, articles: articles, reference: refEntries, bookText: {if (salt != null) 'salt-road': salt.chapters.expand((c) => c.paragraphs).join(' ')});
 });
 
 final searchResultsProvider = Provider<SearchResults>((ref) {

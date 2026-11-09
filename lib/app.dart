@@ -12,11 +12,6 @@ class PagewellApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final session = ref.watch(sessionProvider);
-    return MaterialApp(
-      title: 'Pagewell',
-      debugShowCheckedModeBanner: false,
-      theme: buildTheme(),
-      home: session == null ? const WelcomeScreen() : const Shell(),
-    );
+    return MaterialApp(title: 'Pagewell', debugShowCheckedModeBanner: false, theme: buildTheme(), home: session == null ? const WelcomeScreen() : const Shell());
   }
 }

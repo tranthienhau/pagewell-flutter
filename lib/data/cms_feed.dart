@@ -24,7 +24,7 @@ class CmsFeed {
   }
 
   CmsFeed publish(String id, DateTime now) => CmsFeed(
-        entries: [for (final e in entries) e.id == id ? e.copyWith(status: CmsStatus.published, date: now) : e],
-        publishedTotal: publishedTotal + 1,
-      );
+    entries: [for (final e in entries) e.id == id ? e.copyWith(status: CmsStatus.published, date: now) : e],
+    publishedTotal: publishedTotal + 1,
+  );
 }

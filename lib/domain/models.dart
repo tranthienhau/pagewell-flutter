@@ -102,14 +102,7 @@ class RefEntry {
 enum BookmarkKind { page, audio, reference, article }
 
 class Bookmark {
-  const Bookmark({
-    required this.id,
-    required this.kind,
-    required this.targetId,
-    required this.label,
-    required this.createdAt,
-    this.snippet,
-  });
+  const Bookmark({required this.id, required this.kind, required this.targetId, required this.label, required this.createdAt, this.snippet});
 
   final String id;
   final BookmarkKind kind;
@@ -141,14 +134,7 @@ enum CmsStatus { draft, scheduled, published }
 
 /// One item in the editor studio schedule (the simulated CMS).
 class CmsEntry {
-  const CmsEntry({
-    required this.id,
-    required this.title,
-    required this.type,
-    required this.status,
-    required this.date,
-    this.image,
-  });
+  const CmsEntry({required this.id, required this.title, required this.type, required this.status, required this.date, this.image});
 
   final String id;
   final String title;
@@ -157,15 +143,14 @@ class CmsEntry {
   final DateTime date;
   final String? image;
 
-  CmsEntry copyWith({CmsStatus? status, DateTime? date}) =>
-      CmsEntry(id: id, title: title, type: type, status: status ?? this.status, date: date ?? this.date, image: image);
+  CmsEntry copyWith({CmsStatus? status, DateTime? date}) => CmsEntry(id: id, title: title, type: type, status: status ?? this.status, date: date ?? this.date, image: image);
 
   factory CmsEntry.fromJson(Map<String, dynamic> j) => CmsEntry(
-        id: j['id'] as String,
-        title: j['title'] as String,
-        type: CmsType.values.byName(j['type'] as String),
-        status: CmsStatus.values.byName(j['status'] as String),
-        date: DateTime.parse(j['date'] as String),
-        image: j['image'] as String?,
-      );
+    id: j['id'] as String,
+    title: j['title'] as String,
+    type: CmsType.values.byName(j['type'] as String),
+    status: CmsStatus.values.byName(j['status'] as String),
+    date: DateTime.parse(j['date'] as String),
+    image: j['image'] as String?,
+  );
 }

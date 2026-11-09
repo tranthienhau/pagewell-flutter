@@ -21,12 +21,9 @@ class EpubParser {
     final base = opfPath.contains('/') ? opfPath.substring(0, opfPath.lastIndexOf('/') + 1) : '';
     final opf = XmlDocument.parse(read(opfPath));
 
-    String meta(String local) =>
-        opf.descendants.whereType<XmlElement>().where((e) => e.name.local == local).map((e) => e.innerText.trim()).firstWhere((_) => true, orElse: () => '');
+    String meta(String local) => opf.descendants.whereType<XmlElement>().where((e) => e.name.local == local).map((e) => e.innerText.trim()).firstWhere((_) => true, orElse: () => '');
 
-    final manifest = <String, String>{
-      for (final item in opf.findAllElements('item')) item.getAttribute('id')!: item.getAttribute('href')!,
-    };
+    final manifest = <String, String>{for (final item in opf.findAllElements('item')) item.getAttribute('id')!: item.getAttribute('href')!};
     final spine = opf.findAllElements('itemref').map((e) => e.getAttribute('idref')!).toList();
 
     final chapters = <EpubChapter>[];

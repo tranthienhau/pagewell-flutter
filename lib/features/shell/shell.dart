@@ -31,43 +31,57 @@ class Shell extends ConsumerWidget {
         bottom: false,
         child: IndexedStack(index: i, children: const [TodayScreen(), LibraryScreen(), SearchScreen(), SavedScreen(), ProfileScreen()]),
       ),
-      bottomNavigationBar: Column(mainAxisSize: MainAxisSize.min, children: [
-        if (i != 4) const MiniPlayer(),
-        Container(
-          decoration: const BoxDecoration(color: C.surface, border: Border(top: BorderSide(color: C.border))),
-          child: SafeArea(
-            top: false,
-            child: SizedBox(
-              height: 64,
-              child: Row(children: [
-                for (var k = 0; k < tabs.length; k++)
-                  Expanded(
-                    child: Semantics(
-                      selected: k == i,
-                      button: true,
-                      label: tabs[k].$1,
-                      child: InkWell(
-                        key: Key('tab-${tabs[k].$1.toLowerCase()}'),
-                        onTap: () => ref.read(tabProvider.notifier).go(k),
-                        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                          AnimatedContainer(
-                            duration: const Duration(milliseconds: 180),
-                            width: 52,
-                            height: 30,
-                            decoration: BoxDecoration(color: k == i ? C.accentTint : Colors.transparent, borderRadius: BorderRadius.circular(999)),
-                            child: Icon(tabs[k].$2, size: 22, color: k == i ? C.accentFill : C.text2),
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (i != 4) const MiniPlayer(),
+          Container(
+            decoration: const BoxDecoration(
+              color: C.surface,
+              border: Border(top: BorderSide(color: C.border)),
+            ),
+            child: SafeArea(
+              top: false,
+              child: SizedBox(
+                height: 64,
+                child: Row(
+                  children: [
+                    for (var k = 0; k < tabs.length; k++)
+                      Expanded(
+                        child: Semantics(
+                          selected: k == i,
+                          button: true,
+                          label: tabs[k].$1,
+                          child: InkWell(
+                            key: Key('tab-${tabs[k].$1.toLowerCase()}'),
+                            onTap: () => ref.read(tabProvider.notifier).go(k),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                AnimatedContainer(
+                                  duration: const Duration(milliseconds: 180),
+                                  width: 52,
+                                  height: 30,
+                                  decoration: BoxDecoration(color: k == i ? C.accentTint : Colors.transparent, borderRadius: BorderRadius.circular(999)),
+                                  child: Icon(tabs[k].$2, size: 22, color: k == i ? C.accentFill : C.text2),
+                                ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  tabs[k].$1,
+                                  style: T.caption.copyWith(fontSize: 12, color: k == i ? C.accentFill : C.text2, fontWeight: k == i ? FontWeight.w600 : FontWeight.w500),
+                                ),
+                              ],
+                            ),
                           ),
-                          const SizedBox(height: 2),
-                          Text(tabs[k].$1, style: T.caption.copyWith(fontSize: 12, color: k == i ? C.accentFill : C.text2, fontWeight: k == i ? FontWeight.w600 : FontWeight.w500)),
-                        ]),
+                        ),
                       ),
-                    ),
-                  ),
-              ]),
+                  ],
+                ),
+              ),
             ),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 }
