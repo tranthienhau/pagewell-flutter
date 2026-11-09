@@ -1,4 +1,5 @@
 name: capture
+# Pagewell: captures 14 screens (integration_test/screenshot_test.dart) and the demo walkthrough.
 
 # Dispatched from the pod by make-poc-pod. Captures real Android screenshots + a demo GIF on a
 # KVM emulator and uploads them as the "capture" artifact. Never commits to the repo.
