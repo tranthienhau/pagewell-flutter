@@ -215,7 +215,7 @@ final playerProvider = NotifierProvider<PlayerNotifier, StreamState?>(PlayerNoti
 // ---------------------------------------------------------------- CMS
 class CmsNotifier extends AsyncNotifier<CmsFeed> {
   @override
-  Future<CmsFeed> build() async => CmsFeed.fromJson(await rootBundle.loadString('assets/cms/feed.json'));
+  Future<CmsFeed> build() async => CmsFeed.fromJson(await rootBundle.loadString('assets/cms/feed.json', cache: false));
 
   void publish(String id) {
     final feed = state.value;
