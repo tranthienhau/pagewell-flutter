@@ -51,6 +51,7 @@ void main() {
     await back(t, settleMs: 700);
     await tapKey(t, 'tab-today', settleMs: 2200);
     debugPrint('POC_DEMO_END');
-    await pumpFor(t, 500);
+    // Stay on screen past the cut so the GIF never ends on the launcher.
+    await pumpFor(t, 3000);
   });
 }
