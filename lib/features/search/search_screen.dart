@@ -94,7 +94,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           ),
         ),
         SizedBox(
-          height: 36,
+          height: 44,
           child: ListView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 20),

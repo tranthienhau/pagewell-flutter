@@ -25,7 +25,7 @@ class ProfileScreen extends ConsumerWidget {
         ),
       ),
     );
-    Widget row(String key, IconData icon, String label, VoidCallback onTap, {Color color = C.ink, bool chevron = true}) => InkWell(
+    Widget row(String key, IconData icon, String label, VoidCallback onTap, {Color color = C.ink, bool chevron = true, String? detail}) => InkWell(
       key: Key(key),
       onTap: onTap,
       child: SizedBox(
@@ -38,6 +38,7 @@ class ProfileScreen extends ConsumerWidget {
             Expanded(
               child: Text(label, style: T.body.copyWith(color: color)),
             ),
+            if (detail != null) Text(detail, style: T.caption),
             if (chevron) const Icon(Icons.chevron_right_rounded, color: C.text3),
             const SizedBox(width: 12),
           ],
@@ -107,6 +108,22 @@ class ProfileScreen extends ConsumerWidget {
                         Text(m.premium ? 'Unlimited books, audio and reference' : '${m.booksUsed} of ${m.freeLimit} books used this month', style: T.caption),
                         const SizedBox(height: 10),
                         Bar(m.premium ? 1 : m.booksUsed / m.freeLimit),
+                        if (m.premium)
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextButton(
+                              key: const Key('manage-subscription'),
+                              style: TextButton.styleFrom(padding: EdgeInsets.zero, minimumSize: const Size(0, 44)),
+                              onPressed: () {
+                                ref.read(membershipProvider.notifier).cancel();
+                                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Premium cancelled. You keep access until the end of the trial.')));
+                              },
+                              child: Text(
+                                'Manage or cancel',
+                                style: T.label.copyWith(color: C.accentFill, fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                          ),
                       ],
                     ),
                   ),
@@ -122,7 +139,7 @@ class ProfileScreen extends ConsumerWidget {
           padding: EdgeInsets.zero,
           child: Column(
             children: [
-              row('downloads', Icons.download_outlined, 'Downloads', () {}),
+              row('downloads', Icons.download_outlined, 'Downloads', () {}, detail: '3 titles - 412 MB'),
               const Divider(height: 1, color: C.border),
               row('reading-prefs', Icons.text_fields_rounded, 'Reading preferences', () {}),
               const Divider(height: 1, color: C.border),

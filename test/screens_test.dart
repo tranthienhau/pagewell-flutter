@@ -126,6 +126,7 @@ void main() {
     expect(find.textContaining('A book by the water'), findsOneWidget);
     await pumpScreen(t, const MembershipScreen());
     expect(find.text('Start 7-day free trial'), findsOneWidget);
+    expect(find.textContaining(r'then $79.99 a year. Renews automatically'), findsOneWidget);
   });
 
   testWidgets('editor studio publishes the next item to Today', (t) async {

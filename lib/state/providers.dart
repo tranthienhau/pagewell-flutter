@@ -77,7 +77,7 @@ class LibraryState {
 }
 
 class LibraryNotifier extends Notifier<LibraryState> {
-  static const _seed = LibraryState(owned: ['salt-road', 'quiet-hours', 'tide-keeper', 'lanterns', 'small-rivers', 'north-of-quiet'], progress: {'salt-road': .42, 'quiet-hours': .64});
+  static const _seed = LibraryState(owned: ['salt-road', 'quiet-hours', 'tide-keeper', 'lanterns', 'small-rivers', 'north-of-quiet'], progress: {'salt-road': .25, 'quiet-hours': .64});
 
   @override
   LibraryState build() => _seed;

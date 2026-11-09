@@ -38,7 +38,7 @@ class BookScreen extends ConsumerWidget {
               ],
             ),
             const SizedBox(height: 8),
-            Center(child: CoverImage(b.cover, width: 180, premium: b.premium)),
+            Center(child: CoverImage(b.cover, width: 180)),
             const SizedBox(height: 20),
             Text(b.title, textAlign: TextAlign.center, style: T.display),
             const SizedBox(height: 4),
@@ -57,7 +57,7 @@ class BookScreen extends ConsumerWidget {
               ],
             ),
             const SizedBox(height: 12),
-            Wrap(alignment: WrapAlignment.center, spacing: 8, runSpacing: 8, children: [for (final c in chips) Pill(c)]),
+            Wrap(alignment: WrapAlignment.center, spacing: 8, runSpacing: 8, children: [if (b.premium) const PremiumBadge(), for (final c in chips) Pill(c)]),
             const SizedBox(height: 20),
             Row(
               children: [

@@ -159,11 +159,10 @@ class Bar extends StatelessWidget {
 }
 
 class CoverImage extends StatelessWidget {
-  const CoverImage(this.asset, {super.key, this.width = 120, this.radius = 12, this.premium = false});
+  const CoverImage(this.asset, {super.key, this.width = 120, this.radius = 12});
   final String asset;
   final double width;
   final double radius;
-  final bool premium;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -174,10 +173,7 @@ class CoverImage extends StatelessWidget {
       borderRadius: BorderRadius.circular(radius),
       child: Stack(
         fit: StackFit.expand,
-        children: [
-          Image.asset(asset, fit: BoxFit.cover),
-          if (premium) const Positioned(left: 8, top: 8, child: PremiumBadge()),
-        ],
+        children: [Image.asset(asset, fit: BoxFit.cover)],
       ),
     ),
   );
@@ -252,18 +248,22 @@ class FilterChipPill extends StatelessWidget {
   @override
   Widget build(BuildContext context) => GestureDetector(
     onTap: onTap,
-    child: Container(
-      height: 36,
-      padding: const EdgeInsets.symmetric(horizontal: 14),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: selected ? C.accentTint : C.surface,
-        borderRadius: BorderRadius.circular(999),
-        border: Border.all(color: selected ? C.accentTint : C.border),
-      ),
-      child: Text(
-        label,
-        style: T.caption.copyWith(color: selected ? C.accentFill : C.text2, fontWeight: FontWeight.w600),
+    behavior: HitTestBehavior.opaque,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      child: Container(
+        height: 36,
+        padding: const EdgeInsets.symmetric(horizontal: 14),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: selected ? C.accentTint : C.surface,
+          borderRadius: BorderRadius.circular(999),
+          border: Border.all(color: selected ? C.accentTint : C.border),
+        ),
+        child: Text(
+          label,
+          style: T.caption.copyWith(color: selected ? C.accentFill : C.text2, fontWeight: FontWeight.w600),
+        ),
       ),
     ),
   );

@@ -156,7 +156,7 @@ class _SavedScreenState extends ConsumerState<SavedScreen> {
                       onTap: () => Nav.book(context, id),
                       child: Row(
                         children: [
-                          CoverImage(bookById(id).cover, width: 56, radius: 8, premium: false),
+                          CoverImage(bookById(id).cover, width: 56, radius: 8),
                           const SizedBox(width: 12),
                           Expanded(
                             child: Column(

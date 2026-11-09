@@ -147,10 +147,15 @@ class _MembershipScreenState extends ConsumerState<MembershipScreen> {
               ),
             const SizedBox(height: 12),
             Text(
-              'Cancel anytime. The free plan includes 3 books a month.',
+              _plan == 'annual'
+                  ? r'Free for 7 days, then $79.99 a year. Renews automatically until you cancel in Profile, at least 24 hours before the trial ends.'
+                  : r'Free for 7 days, then $9.99 a month. Renews automatically until you cancel in Profile, at least 24 hours before the trial ends.',
+              key: const Key('renewal-terms'),
               textAlign: TextAlign.center,
               style: T.label.copyWith(color: C.text2, fontWeight: FontWeight.w400),
             ),
+            const SizedBox(height: 4),
+            Text('The free plan includes 3 books a month.', textAlign: TextAlign.center, style: T.caption),
             const SizedBox(height: 8),
             Center(
               child: TextButton(

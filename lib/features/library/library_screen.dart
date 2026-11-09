@@ -38,7 +38,7 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
           Expanded(child: _Empty(onBrowse: () => ref.read(libraryProvider.notifier).addFreeTitles()))
         else ...[
           SizedBox(
-            height: 36,
+            height: 44,
             child: ListView(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -65,9 +65,7 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      LayoutBuilder(
-                        builder: (_, c) => CoverImage(b.cover, width: c.maxWidth, premium: b.premium),
-                      ),
+                      LayoutBuilder(builder: (_, c) => CoverImage(b.cover, width: c.maxWidth)),
                       const SizedBox(height: 8),
                       Text(
                         b.title,
@@ -80,6 +78,7 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
                           Expanded(
                             child: Text(b.author, maxLines: 1, overflow: TextOverflow.ellipsis, style: T.caption),
                           ),
+                          if (b.premium) ...[const PremiumBadge(), const SizedBox(width: 6)],
                           Icon(b.format == BookFormat.audiobook ? Icons.headphones_rounded : Icons.menu_book_rounded, size: 16, color: C.text2),
                         ],
                       ),

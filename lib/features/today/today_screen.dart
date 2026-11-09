@@ -152,7 +152,7 @@ class TodayScreen extends ConsumerWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CoverImage(bookById(id).cover, width: 124, premium: bookById(id).premium),
+                          CoverImage(bookById(id).cover, width: 124),
                           const SizedBox(height: 8),
                           Text(
                             bookById(id).title,
@@ -160,7 +160,14 @@ class TodayScreen extends ConsumerWidget {
                             overflow: TextOverflow.ellipsis,
                             style: T.label.copyWith(fontWeight: FontWeight.w600),
                           ),
-                          Text(bookById(id).author, maxLines: 1, style: T.caption),
+                          Row(
+                            children: [
+                              Flexible(
+                                child: Text(bookById(id).author, maxLines: 1, overflow: TextOverflow.ellipsis, style: T.caption),
+                              ),
+                              if (bookById(id).premium) ...[const SizedBox(width: 6), const PremiumBadge()],
+                            ],
+                          ),
                         ],
                       ),
                     ),

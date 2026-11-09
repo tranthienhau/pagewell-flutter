@@ -20,6 +20,7 @@ class ReaderScreen extends ConsumerStatefulWidget {
 class _ReaderScreenState extends ConsumerState<ReaderScreen> {
   final _scroll = ScrollController();
   double _frac = 0;
+  int _idx = 0, _count = 1;
   late bool _settings = widget.showSettings;
 
   @override
@@ -28,7 +29,10 @@ class _ReaderScreenState extends ConsumerState<ReaderScreen> {
     _scroll.addListener(() {
       final max = _scroll.position.maxScrollExtent;
       final f = max <= 0 ? 0.0 : (_scroll.offset / max).clamp(0.0, 1.0);
-      if ((f - _frac).abs() > .01) setState(() => _frac = f);
+      if ((f - _frac).abs() > .01) {
+        setState(() => _frac = f);
+        ref.read(libraryProvider.notifier).setProgress(widget.bookId, (_idx + f) / _count);
+      }
     });
   }
 
@@ -40,7 +44,7 @@ class _ReaderScreenState extends ConsumerState<ReaderScreen> {
 
   void _goChapter(int i, int total) {
     ref.read(readingPosProvider.notifier).set(widget.bookId, i);
-    ref.read(libraryProvider.notifier).setProgress(widget.bookId, (i + .05) / total);
+    ref.read(libraryProvider.notifier).setProgress(widget.bookId, i / total);
     if (_scroll.hasClients) _scroll.jumpTo(0);
     setState(() => _frac = 0);
   }
@@ -67,6 +71,8 @@ class _ReaderScreenState extends ConsumerState<ReaderScreen> {
           data: (doc) {
             final idx = (ref.watch(readingPosProvider)[book.id] ?? 0).clamp(0, doc.chapters.length - 1);
             final ch = doc.chapters[idx];
+            _idx = idx;
+            _count = doc.chapters.length;
             final overall = (idx + _frac) / doc.chapters.length;
             final page = (overall * (book.pages - 1)).round() + 1;
             final minsLeft = ((1 - _frac) * book.chapters[idx].minutes / 3.5).ceil();
